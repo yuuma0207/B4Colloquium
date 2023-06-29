@@ -1,0 +1,216 @@
+\RequirePackage{plautopatch}
+\documentclass[14pt,aspectratio=169,xcolor=dvipsnames,table,dvipdfmx]{beamer}
+\usepackage{bxdpx-beamer} % dvipdfmxなので必要
+
+%Beamerの設定
+\usetheme{Boadilla}
+
+%Beamerフォント設定
+\usefonttheme{professionalfonts} % Be professional!
+\usepackage[T1]{fontenc}
+\usepackage{mlmodern}  % 太いComputer Modern
+% MLmodernのバグを修正: cf. https://tex.stackexchange.com/questions/646333/size-of-integral-symbol-in-section-header-with-mlmodern
+\DeclareFontFamily{OMX}{mlmex}{}
+\DeclareFontShape{OMX}{mlmex}{m}{n}{%
+   <->mlmex10%
+   }{} 
+\usepackage{newtxtext} % 数式以外をTXフォントで上書き
+\usepackage[deluxe,uplatex]{otf} % 日本語多ウェイト化
+\usepackage{physics}
+\usepackage{mhchem}
+\usepackage{amsmath,amsfonts,amssymb,mathtools,amsthm}
+\renewcommand{\familydefault}{\sfdefault}  % 英文をサンセリフ体に
+\renewcommand{\kanjifamilydefault}{\gtdefault}  % 日本語をゴシック体に
+\usefonttheme{structurebold} % タイトル部を太字
+\setbeamerfont{alerted text}{series=\bfseries} % Alertを太字
+\setbeamerfont{section in toc}{series=\mdseries} % 目次は太字にしない
+\setbeamerfont{frametitle}{size=\Large} % フレームタイトル文字サイズ
+\setbeamerfont{title}{size=\LARGE} % タイトル文字サイズ
+\setbeamerfont{date}{size=\small}  % 日付文字サイズ
+
+% Babel (日本語の場合のみ・英語の場合は不要)
+\uselanguage{japanese}
+\languagepath{japanese}
+\deftranslation[to=japanese]{Theorem}{定理}
+\deftranslation[to=japanese]{Lemma}{補題}
+\deftranslation[to=japanese]{Example}{例}
+\deftranslation[to=japanese]{Examples}{例}
+\deftranslation[to=japanese]{Definition}{定義}
+\deftranslation[to=japanese]{Definitions}{定義}
+\deftranslation[to=japanese]{Problem}{問題}
+\deftranslation[to=japanese]{Solution}{解}
+\deftranslation[to=japanese]{Fact}{事実}
+\deftranslation[to=japanese]{Proof}{証明}
+\def\proofname{証明}
+
+%Beamer色設定
+\definecolor{UniBlue}{RGB}{0,150,200} 
+\definecolor{AlertOrange}{RGB}{255,76,0}
+\definecolor{AlmostBlack}{RGB}{38,38,38}
+\setbeamercolor{normal text}{fg=AlmostBlack}  % 本文カラー
+\setbeamercolor{structure}{fg=UniBlue} % 見出しカラー
+\setbeamercolor{block title}{fg=UniBlue!50!black} % ブロック部分タイトルカラー
+\setbeamercolor{alerted text}{fg=AlertOrange} % \alert 文字カラー
+\mode<beamer>{
+    \definecolor{BackGroundGray}{RGB}{254,254,254}
+    \setbeamercolor{background canvas}{bg=BackGroundGray} % スライドモードのみ背景をわずかにグレーにする
+}
+
+%フラットデザイン化
+\setbeamertemplate{blocks}[rounded] % Blockの影を消す
+\useinnertheme{circles} % 箇条書きをシンプルに
+\setbeamertemplate{navigation symbols}{} % ナビゲーションシンボルを消す
+\setbeamertemplate{footline}[frame number] % フッターはスライド番号のみ
+
+%タイトルページ
+\setbeamertemplate{title page}{%
+    \vspace{2.5em}
+    {\usebeamerfont{title} \usebeamercolor[fg]{title} \inserttitle \par}
+    {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle \par}
+    \vspace{1.5em}
+    \begin{flushright}
+        \usebeamerfont{author}\insertauthor\par
+        \usebeamerfont{institute}\insertinstitute \par
+        \vspace{3em}
+        \usebeamerfont{date}\insertdate\par
+        \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+    \end{flushright}
+}
+
+% Algorithm系
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\algsetup{linenosize=\color{fg!50}\footnotesize}
+\renewcommand\algorithmicdo{:}
+\renewcommand\algorithmicthen{:}
+\renewcommand\algorithmicrequire{\textbf{Input:}}
+\renewcommand\algorithmicensure{\textbf{Output:}}
+
+% 定理
+\theoremstyle{definition}
+\newenvironment{mythm}{\begin{alertblock}{定理}}{\end{alertblock}} %自分の結果は赤色で表示
+
+\AtBeginSection[]{
+    \frame{\tableofcontents[currentsection, hideallsubsections]} %目次スライド
+}
+
+
+%タイトル
+\title{J.W.Negele, Nuclear Mean-Field Theory, Physics Today 38, 24(1985)}
+\author{\textbf{松本侑真}}
+\date{\today}
+\institute{}
+
+\begin{document}
+\maketitle
+\frame{\tableofcontents[hideallsubsections]}
+
+\section{背景}
+\begin{frame}{核分裂について}
+  \begin{itemize}
+    \item 核分裂についての説明
+    \item 図とかをいれる
+    \item 重い元素と軽い元素どちらでも起こる？\ce{Be^8}の核分裂と\ce{U^{235}}の分裂の仕組みは同じ？
+    \item トンネル効果
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{平均場理論}
+  \begin{itemize}
+    \item 相対論的多体系としての原子核という本を参考にすればよさそう
+    \item TDHFの説明を簡単にする（半古典的な近似だが、うまく現象を説明してきている）
+    \item TDHFを使う場面
+  \end{itemize}
+  \begin{block}{平均場理論の問題点}
+    \begin{itemize}
+      \item TDHFは量子効果を適切に取り入れることができない。
+      \item 特に、重い原子核の核分裂反応を正しく記述できなかった。
+    \end{itemize}
+  \end{block}
+
+\end{frame}
+
+
+\section{目的}
+\begin{frame}{平均場理論の枠組みで核分裂反応を記述する}
+  \begin{block}{経路積分を使う理由}
+    \begin{itemize}
+      \item トンネル効果を含む量子論の現象を記述できる
+      \item 近似手法がある程度確立している（定常位相近似(SPA)、鞍点法）
+    \end{itemize}
+  \end{block}
+  経路積分の概念図をいれる
+\end{frame}
+
+\begin{frame}{経路積分の数式表現}
+  \begin{itemize}
+    \item 時間発展演算子$U(t,t_0)=e^{-i\hat{H}(t-t_0)/\hbar}$
+    \item 始状態を$\ket{\psi_i}$とすると、終状態は$\ket{\psi_f}=U(t,t_0)\ket{\psi_i}$
+          \begin{equation*}
+            \psi_f(q) = \int dq'\,\bra{q}U(t,t_0)\ket{q'}\bra{q'}\ket{\psi_i}
+            = \int dq'\,K(q,q'\,;t,t_0)\psi_i(q')
+          \end{equation*}
+    \item ファインマン核$K(q_f,q_i\,;t_f,t_i)$の具体形
+          \begin{equation*}
+            K(q_f,q_i\,;t_f,t_i) = \int\mathcal{D}q\int\mathcal{D}p
+            \exp\qty[\frac{i}{\hbar}\int_{t_i}^{t_f}dt\,(p\dot{q}-H(p,q))]
+          \end{equation*}
+          \begin{equation*}
+            \int \mathcal{D}q \coloneqq \prod_{j=1}^N \int dq_j\;,\quad
+            \int \mathcal{D}p \coloneqq \prod_{j=1}^N \int \frac{dp_j}{2\pi\hbar}
+          \end{equation*}
+  \end{itemize}
+\end{frame}
+\begin{frame}{経路積分の数式表現}
+  ポテンシャルが位置にのみ依存する場合、運動量積分が計算できる。
+  \begin{align*}
+    K(q_f,q_i\,;t_f,t_i) & = \int\mathcal{D}q
+    \exp\qty[\frac{i}{\hbar}\int_{t_i}^{t_f}dt\,\qty(\frac{m}{2}\dot{q}^2 - V(q))] \\
+                         & = \int\mathcal{D}q\exp\qty[\frac{i}{\hbar}S[q]]
+  \end{align*}
+  \begin{block}{経路積分の解釈}
+    各時刻で作用を
+  \end{block}
+\end{frame}
+
+\section{手法}
+\begin{frame}{エネルギー固有値を求める}
+  位置座標$q$に対応する状態$\ket{q}$を用いて
+  \begin{align*}
+    \trace\frac{1}{E-\hat{H}+i\eta} & =-i\int_0^{\infty}dT\,e^{iET}\int dq\,\bra{q}e^{-i\hat{H}T}\ket{q} \\
+                                    & = -i\int_0^{\infty}dT\,e^{iET}\int dq\,\int\mathcal{D}[q]e^{iS[q]}
+  \end{align*}
+  \begin{itemize}
+    \item SPAで右辺を計算し、極を与える$E$を求める。
+    \item $\delta S[q_0]=0$のとき、$q_0$はEuler-Lagrange方程式の解となる。
+    \item $q(0)=q(T)$の境界条件を満たしている。（周期運動）
+  \end{itemize}
+
+
+
+\end{frame}
+\begin{frame}{1粒子の1次元系でのトンネル効果}
+
+\end{frame}
+
+\section{結果}
+
+\section{まとめ}
+
+\section{アルゴリズム}
+\begin{frame}{アルゴリズムサンプル}
+  \begin{block}{Matrix Multiplication}
+    \begin{algorithmic}[1]
+      \STATE $C = O$
+      \FOR{$i = 1, \dots, m$}
+      \FOR{$j = 1, \dots, n$}
+      \FOR{$k = 1, \dots, r$}
+      \STATE $C[i,j] = C[i,j] + A[i, k] \cdot B[k, j]$
+      \ENDFOR
+      \ENDFOR
+      \ENDFOR
+      \RETURN $C$
+    \end{algorithmic}
+  \end{block}
+\end{frame}
+\end{document}
