@@ -156,8 +156,9 @@
             \exp\qty[\frac{i}{\hbar}\int_{t_i}^{t_f}dt\,(p\dot{q}-H(p,q))]
           \end{equation*}
           \begin{equation*}
-            \int \mathcal{D}q \coloneqq \prod_{j=1}^N \int dq_j\;,\quad
-            \int \mathcal{D}p \coloneqq \prod_{j=1}^N \int \frac{dp_j}{2\pi\hbar}
+            \int \mathcal{D}q \coloneqq \prod_{j=1}^{N-1} \int dq_j\;,\quad
+            \int \mathcal{D}p \coloneqq \prod_{j=1}^N \int \frac{dp_j}{2\pi\hbar}\;,\quad
+            t_f = t_i + N\varDelta t
           \end{equation*}
   \end{itemize}
 \end{frame}
@@ -169,7 +170,9 @@
                          & = \int\mathcal{D}q\exp\qty[\frac{i}{\hbar}S[q]]
   \end{align*}
   \begin{block}{経路積分の解釈}
-    各時刻で作用を
+    $\ket{q_i\,;t_i}$から$\ket{q_f\,;t_f}$への遷移確率振幅は、
+    $(q_i,t_i)\to(q_1,t_1)\to\cdots\to(q_{N-1},t_{N-1})\to(q_f,t_f)$
+    を経たときの遷移確率振幅として解釈でき、中間状態に関して全ての経路の和が取られている。
   \end{block}
 \end{frame}
 
