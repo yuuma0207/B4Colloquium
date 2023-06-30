@@ -16,7 +16,7 @@
    }{} 
 \usepackage{newtxtext} % 数式以外をTXフォントで上書き
 \usepackage[deluxe,uplatex]{otf} % 日本語多ウェイト化
-\usepackage{physics}
+\usepackage{physics,bm}
 \usepackage{mhchem}
 \usepackage{amsmath,amsfonts,amssymb,mathtools,amsthm}
 \renewcommand{\familydefault}{\sfdefault}  % 英文をサンセリフ体に
@@ -120,14 +120,20 @@
 
 \begin{frame}{平均場理論}
   \begin{itemize}
-    \item 相対論的多体系としての原子核という本を参考にすればよさそう
-    \item TDHFの説明を簡単にする（半古典的な近似だが、うまく現象を説明してきている）
-    \item TDHFを使う場面
+    \item 多体系における相互作用を平均化して一体問題のポテンシャルとして扱う。（Ising模型の平均場理論やHartree-Fock近似）
+    \item 時間依存のHF方程式（TDHF方程式）は、時間依存Shr\"{o}dinger方程式の制約付き変分問題として導出される。
+    \item TDHFは比較的簡単に扱える第一原理計算手法である。
   \end{itemize}
-  \begin{block}{平均場理論の問題点}
+  \begin{block}{TDHFの問題点}
     \begin{itemize}
-      \item TDHFは量子効果を適切に取り入れることができない。
-      \item 特に、重い原子核の核分裂反応を正しく記述できなかった。
+      \item 多体波動関数が1つのスレーター行列式で表されるという近似を用いている。
+            \begin{itemize}
+              \item 複数のスレーター行列式の線形結合で波動関数を表すことで、より正確な状態が得られる。
+            \end{itemize}
+      \item 重い原子核の核分裂反応を正しく記述できない。
+            \begin{itemize}
+              \item トンネル効果などの量子効果を正確に記述出来ていない。
+            \end{itemize}
     \end{itemize}
   \end{block}
 
@@ -189,7 +195,7 @@
   \end{align*}
   \begin{block}{経路積分の解釈}
     $(q_i,t_i)\to(q_1,t_1)\to\cdots\to(q_{N-1},t_{N-1})\to(q_f,t_f)$
-    を経たときの遷移確率振幅を考えて、中間状態に関して全ての経路の和を取ると、
+    を経たときの遷移確率振幅を考えて、中間状態に関して全ての経路の和を取ると、\\
     $\ket{q_i\,;t_i}$から$\ket{q_f\,;t_f}$への遷移確率振幅となる。
   \end{block}
 \end{frame}
