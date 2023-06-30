@@ -120,23 +120,38 @@
 
 \begin{frame}{平均場理論}
   \begin{itemize}
-    \item 多体系における相互作用を平均化して一体問題のポテンシャルとして扱う。（Ising模型の平均場理論やHartree-Fock近似）
-    \item 時間依存のHF方程式（TDHF方程式）は、時間依存Shr\"{o}dinger方程式の制約付き変分問題として導出される。
-    \item TDHFは比較的簡単に扱える第一原理計算手法である。
+    \item 多体系における相互作用を平均化して一体問題のポテンシャルとして扱う手法
+    \item 原子核中では、平均ポテンシャルによって核子の配置が決定（集団運動模型）
+    \item 原子核の平均ポテンシャルは、Hartree-Fock近似によって微視的に得られる
+  \end{itemize}
+  \begin{columns}[t]
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item $V(r,t)$と核子の波動関数は\\自己無撞着性を持つ
+        \item
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \adjincludegraphics[width=1\linewidth,valign=t]{heikinba.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}{Hartree-Fock近似}
+  \begin{itemize}
+    \item 時間依存のHF方程式（TDHF方程式）は比較的簡単に扱える第一原理計算手法である
   \end{itemize}
   \begin{block}{TDHFの問題点}
     \begin{itemize}
-      \item 多体波動関数が1つのスレーター行列式で表されるという近似を用いている。
+      \item 多体波動関数が1つのスレーター行列式で表されるという近似を用いている
             \begin{itemize}
-              \item 複数のスレーター行列式の線形結合で波動関数を表すことで、より正確な状態が得られる。
+              \item 複数のスレーター行列式の線形結合で波動関数を表すことで、より正確な状態が得られることが知られている
             \end{itemize}
-      \item 重い原子核の核分裂反応を正しく記述できない。
+      \item 重い原子核の核分裂反応を正しく記述できない
             \begin{itemize}
-              \item トンネル効果などの量子効果を正確に記述出来ていない。
+              \item トンネル効果などの量子効果を正確に記述出来ていない
             \end{itemize}
     \end{itemize}
   \end{block}
-
 \end{frame}
 
 
@@ -153,9 +168,9 @@
       \vspace{-5mm}
       \begin{exampleblock}{経路積分のイメージ}
         \begin{itemize}
+          \item 状態の遷移確率振幅が経路積分で与えられる。
           \item 始状態$(q_i,t_i)$から終状態$(q_f,t_f)$\\に至るあらゆる経路が寄与する
           \item 古典的に実現する経路$q_0(t)$からの寄与が最も大きい
-          \item $q_0(t)$はEuler-Lagrange方程式の解となっている
         \end{itemize}
       \end{exampleblock}
     \end{column}
