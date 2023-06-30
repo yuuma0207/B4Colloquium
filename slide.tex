@@ -93,6 +93,9 @@
 \AtBeginSection[]{
     \frame{\tableofcontents[currentsection, hideallsubsections]} %目次スライド
 }
+\usepackage[absolute,overlay]{textpos}
+\usepackage{array} % needed for \arraybackslash
+\usepackage{adjustbox} % for \adjincludegraphics
 
 
 %タイトル
@@ -139,7 +142,22 @@
       \item 近似手法がある程度確立している（定常位相近似(SPA)、鞍点法）
     \end{itemize}
   \end{block}
-  経路積分の概念図をいれる
+  \begin{columns}[t]
+    \begin{column}{.53\textwidth}
+      \vspace{-5mm}
+      \begin{exampleblock}{経路積分のイメージ}
+        \begin{itemize}
+          \item 始状態$(q_i,t_i)$から終状態$(q_f,t_f)$\\に至るあらゆる経路が寄与する
+          \item 古典的に実現する経路$q_0(t)$からの寄与が最も大きい
+          \item $q_0(t)$はEuler-Lagrange方程式の解となっている
+        \end{itemize}
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{.44\textwidth}
+      \adjincludegraphics[width=1\linewidth,valign=t]{keiro.png}
+    \end{column}
+  \end{columns}
+
 \end{frame}
 
 \begin{frame}{経路積分の数式表現}

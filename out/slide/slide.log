@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  30 JUN 2023 09:17
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  30 JUN 2023 10:14
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -906,43 +906,119 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@depth=\count363
 \ALC@tlm=\skip81
 \algorithmicindent=\skip82
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/textpos/textpos.sty
+Package: textpos 2022/07/23 v1.10.1
+Package textpos Info: choosing support for LaTeX3 on input line 60.
+\TP@textbox=\box101
+\TP@holdbox=\box102
+\TPHorizModule=\dimen326
+\TPVertModule=\dimen327
+\TP@margin=\dimen328
+\TP@absmargin=\dimen329
+Grid set 16 x 16 = 28.45274pt x 16.00467pt
+\TPboxrulesize=\dimen330
+\TP@ox=\dimen331
+\TP@oy=\dimen332
+\TP@tbargs=\toks53
+TextBlockOrigin set to 0pt x 0pt
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/gentombow/pxtextpos.sty
+Package: pxtextpos 2020/10/11 v0.4b Patch to textpos for tombow
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+(/usr/local/texlive/2022/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box103
 )
+\tc@llx=\dimen333
+\tc@lly=\dimen334
+\tc@urx=\dimen335
+\tc@ury=\dimen336
+(/usr/local/texlive/2022/texmf-dist/tex/latex/adjustbox/tc-pgf.def
+File: tc-pgf.def 2019/01/04 v2.2 trimclip fall-back clipping driver using PGF
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
+
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgfnodeparttextbox=\box104
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@nodesepstart=\dimen337
+\pgf@nodesepend=\dimen338
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
+)))
+Package trimclip Info: No clipping driver 'tc-dvipdfmx.def' available.
+(trimclip)             Using fall-back PGF driver.
+)
+\adjbox@Width=\dimen339
+\adjbox@Height=\dimen340
+\adjbox@Depth=\dimen341
+\adjbox@Totalheight=\dimen342
+\adjbox@pwidth=\dimen343
+\adjbox@pheight=\dimen344
+\adjbox@pdepth=\dimen345
+\adjbox@ptotalheight=\dimen346
+(/usr/local/texlive/2022/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count364
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box105
+\sift@deathcycles=\count365
+\@vwid@loff=\dimen347
+\@vwid@roff=\dimen348
+))
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 104.
+(Font)              scaled to size 13.85594pt on input line 107.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 104.
+(Font)              scaled to size 13.85594pt on input line 107.
 LaTeX Font Info:    Trying to load font information for T1+qhv on input line 10
-4.
+7.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/tex-gyre/t1qhv.fd
 File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
 )
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 13.53603pt on input line 104.
+(Font)              scaled to size 13.53603pt on input line 107.
 (out/slide/slide.aux)
 \openout1 = `slide.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 104.
-LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 107.
+LaTeX Font Info:    ... okay on input line 107.
 *geometry* detected driver: dvipdfm
 *geometry* verbose mode - [ preamble ] result:
 * driver: dvipdfm
@@ -976,7 +1052,7 @@ LaTeX Font Info:    ... okay on input line 104.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 104.
+Package hyperref Info: Link coloring OFF on input line 107.
 (out/slide/slide.out) (out/slide/slide.out)
 \@outlinefile=\write5
 \openout5 = `slide.out'.
@@ -1006,68 +1082,69 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-\c@mv@tabular=\count364
-\c@mv@boldtabular=\count365
+\c@mv@tabular=\count366
+\c@mv@boldtabular=\count367
 
-Package chemgreek Info: Activating mapping `default' on line 104.
+Package chemgreek Info: Activating mapping `default' on line 107.
 
+TextBlockOrigin set to 0pt x 0pt
 (out/slide/slide.nav)
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 104.
+(Font)              scaled to size 5.77332pt on input line 107.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 104.
+(Font)              scaled to size 5.77332pt on input line 107.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 5.64001pt on input line 104.
+(Font)              scaled to size 5.64001pt on input line 107.
 LaTeX Font Info:    Font shape `JT2/hgt/bx/n' will be
-(Font)              scaled to size 5.77332pt on input line 104.
+(Font)              scaled to size 5.77332pt on input line 107.
 LaTeX Font Info:    Font shape `JY2/hgt/bx/n' will be
-(Font)              scaled to size 5.77332pt on input line 104.
+(Font)              scaled to size 5.77332pt on input line 107.
 LaTeX Font Info:    Font shape `T1/qhv/bx/n' in size <6> not available
-(Font)              Font shape `T1/qhv/b/n' tried instead on input line 104.
+(Font)              Font shape `T1/qhv/b/n' tried instead on input line 107.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 5.64001pt on input line 104.
+(Font)              scaled to size 5.64001pt on input line 107.
 LaTeX Font Info:    Font shape `JT2/hgt/bx/n' will be
-(Font)              scaled to size 13.85594pt on input line 105.
+(Font)              scaled to size 13.85594pt on input line 108.
 LaTeX Font Info:    Font shape `JY2/hgt/bx/n' will be
-(Font)              scaled to size 13.85594pt on input line 105.
+(Font)              scaled to size 13.85594pt on input line 108.
 LaTeX Font Info:    Font shape `T1/qhv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/qhv/b/n' tried instead on input line 105.
+(Font)              Font shape `T1/qhv/b/n' tried instead on input line 108.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 13.53603pt on input line 105.
+(Font)              scaled to size 13.53603pt on input line 108.
 LaTeX Font Info:    Font shape `JT2/hgt/bx/n' will be
-(Font)              scaled to size 23.94002pt on input line 105.
+(Font)              scaled to size 23.94002pt on input line 108.
 LaTeX Font Info:    Font shape `JY2/hgt/bx/n' will be
-(Font)              scaled to size 23.94002pt on input line 105.
+(Font)              scaled to size 23.94002pt on input line 108.
 LaTeX Font Info:    Font shape `T1/qhv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/qhv/b/n' tried instead on input line 105.
+(Font)              Font shape `T1/qhv/b/n' tried instead on input line 108.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 23.38725pt on input line 105.
+(Font)              scaled to size 23.38725pt on input line 108.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 105.
+(Font)              scaled to size 7.69775pt on input line 108.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 105.
+(Font)              scaled to size 7.69775pt on input line 108.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 7.52002pt on input line 105.
+(Font)              scaled to size 7.52002pt on input line 108.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 105.
+(Font)              scaled to size 11.54663pt on input line 108.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 11.54663pt on input line 105.
+(Font)              scaled to size 11.54663pt on input line 108.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 11.28003pt on input line 105.
+(Font)              scaled to size 11.28003pt on input line 108.
 LaTeX Font Info:    Font shape `JT2/hgt/bx/n' will be
-(Font)              scaled to size 3.84888pt on input line 105.
+(Font)              scaled to size 3.84888pt on input line 108.
 LaTeX Font Info:    Font shape `JY2/hgt/bx/n' will be
-(Font)              scaled to size 3.84888pt on input line 105.
+(Font)              scaled to size 3.84888pt on input line 108.
 LaTeX Font Info:    Font shape `T1/qhv/bx/n' in size <4> not available
-(Font)              Font shape `T1/qhv/b/n' tried instead on input line 105.
+(Font)              Font shape `T1/qhv/b/n' tried instead on input line 108.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 3.76001pt on input line 105.
+(Font)              scaled to size 3.76001pt on input line 108.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 3.84888pt on input line 105.
+(Font)              scaled to size 3.84888pt on input line 108.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 3.84888pt on input line 105.
+(Font)              scaled to size 3.84888pt on input line 108.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 3.76001pt on input line 105.
+(Font)              scaled to size 3.76001pt on input line 108.
 [1
 
 ] (out/slide/slide.toc
@@ -1085,57 +1162,60 @@ LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
 
 ]
 LaTeX Font Info:    Trying to load font information for OT1+mlmr on input line 
-116.
+119.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/mlmodern/ot1mlmr.fd
 File: ot1mlmr.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
 LaTeX Font Info:    Trying to load font information for OML+mlmm on input line 
-116.
+119.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/mlmodern/omlmlmm.fd
 File: omlmlmm.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
 LaTeX Font Info:    Trying to load font information for OMS+mlmsy on input line
- 116.
+ 119.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/mlmodern/omsmlmsy.fd
 File: omsmlmsy.fd 2021/01/11 v1.0 Font defs for mlmodern
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 116
+LaTeX Font Info:    Trying to load font information for U+msa on input line 119
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 116
+LaTeX Font Info:    Trying to load font information for U+msb on input line 119
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 116.
+(Font)              scaled to size 9.6222pt on input line 119.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 116.
+(Font)              scaled to size 9.6222pt on input line 119.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 9.40002pt on input line 116.
+(Font)              scaled to size 9.40002pt on input line 119.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 116.
+(Font)              scaled to size 6.73553pt on input line 119.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 116.
+(Font)              scaled to size 6.73553pt on input line 119.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 6.58002pt on input line 116.
+(Font)              scaled to size 6.58002pt on input line 119.
 LaTeX Font Info:    Font shape `JT2/hgt/bx/n' will be
-(Font)              scaled to size 19.95642pt on input line 116.
+(Font)              scaled to size 19.95642pt on input line 119.
 LaTeX Font Info:    Font shape `JY2/hgt/bx/n' will be
-(Font)              scaled to size 19.95642pt on input line 116.
+(Font)              scaled to size 19.95642pt on input line 119.
 LaTeX Font Info:    Font shape `T1/qhv/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/qhv/b/n' tried instead on input line 116.
+(Font)              Font shape `T1/qhv/b/n' tried instead on input line 119.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 19.49565pt on input line 116.
+(Font)              scaled to size 19.49565pt on input line 119.
 [4
 
 ] [5
 
 ] (out/slide/slide.toc) [6
 
-] [7
+]
+File: keiro.png Graphic file (type bmp)
+<keiro.png>
+[7
 
 ] [8
 
@@ -1157,7 +1237,7 @@ LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
 
 ]
 ***** List of packages loaded by `plautopatch': *****
- pxpgfrcs, plarray, pxpgfmark, pxjahyper.
+ pxpgfrcs, plarray, pxpgfmark, pxjahyper, pxtextpos.
 *****************************************************
 \tf@nav=\write6
 \openout6 = `slide.nav'.
@@ -1173,12 +1253,12 @@ Package rerunfilecheck Info: File `slide.out' has not changed.
 (rerunfilecheck)             Checksum: 4D0E33CDB50B8513B9F7AE6AD4552A71;448.
  ) 
 Here is how much of TeX's memory you used:
- 29646 strings out of 475422
- 568716 string characters out of 5788032
- 867081 words of memory out of 5000000
- 50740 multiletter control sequences out of 15000+600000
+ 31264 strings out of 475422
+ 603157 string characters out of 5788032
+ 899108 words of memory out of 5000000
+ 52305 multiletter control sequences out of 15000+600000
  562777 words of font info for 111 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 128i,14n,122p,460b,1019s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,14n,122p,460b,1047s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/slide/slide.dvi (16 pages, 102084 bytes).
+Output written on out/slide/slide.dvi (16 pages, 107060 bytes).
