@@ -128,7 +128,7 @@
     \begin{column}{.5\textwidth}
       \begin{itemize}
         \item $V(r,t)$と核子の波動関数は\\自己無撞着性を持つ
-        \item
+        \item $V(r,t)$の収束解が系の平衡状態と考えられる
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -138,7 +138,7 @@
 \end{frame}
 \begin{frame}{Hartree-Fock近似}
   \begin{itemize}
-    \item 時間依存のHF方程式（TDHF方程式）は比較的簡単に扱える第一原理計算手法である
+    \item 時間依存のHF方程式（TDHF方程式）は比較的簡単に扱える第一原理的な計算手法
   \end{itemize}
   \begin{block}{TDHFの問題点}
     \begin{itemize}
@@ -160,7 +160,7 @@
   \begin{block}{経路積分を使う理由}
     \begin{itemize}
       \item トンネル効果を含む量子論の現象を記述できる
-      \item 近似手法がある程度確立している（定常位相近似(SPA)、鞍点法）
+      \item 鞍点法（Stationary Phase Approximation：SPA）で近似ができる
     \end{itemize}
   \end{block}
   \begin{columns}[t]
@@ -170,7 +170,7 @@
         \begin{itemize}
           \item 状態の遷移確率振幅が経路積分で与えられる。
           \item 始状態$(q_i,t_i)$から終状態$(q_f,t_f)$\\に至るあらゆる経路が寄与する
-          \item 古典的に実現する経路$q_0(t)$からの寄与が最も大きい
+          \item 作用の変分が$\delta S[q]=0$となる経路$q(t)$からの寄与が大きい
         \end{itemize}
       \end{exampleblock}
     \end{column}
@@ -216,26 +216,95 @@
 \end{frame}
 
 \section{手法}
+\begin{frame}{トンネリング解を計算する方法}
+  \begin{enumerate}
+    \item トンネリング解に対応するエネルギー固有値を求める
+          \begin{itemize}
+            \item $\trace{(E-\hat{H})^{-1}}=\sum_{n}\ev{(E-E_n)^{-1}}{E_n}$の極がエネルギー固有値
+          \end{itemize}
+          \begin{align*}
+            \trace\frac{1}{E-\hat{H}+i\eta} & =-i\int_0^{\infty}dT\,e^{iET}\int dq\,\bra{q}e^{-i\hat{H}T}\ket{q} \\
+                                            & = -i\int_0^{\infty}dT\,e^{iET}\int dq\,\int\mathcal{D}[q]e^{iS[q]}
+          \end{align*}
+          \begin{itemize}
+            \item $q(0)=q(T)$の境界条件（周期運動）を満たした経路積分
+            \item あらゆる周期解の中で、$\delta S[q(T)]=0$となるものを足し合わせる
+          \end{itemize}
+  \end{enumerate}
+  \begin{enumerate}
+    \setcounter{enumi}{1}
+    \item エネルギー固有値に対応する波動関数（核分裂後を記述する状態）を計算する
+  \end{enumerate}
+\end{frame}
+
 \begin{frame}{エネルギー固有値を求める}
-  位置座標$q$に対応する状態$\ket{q}$を用いて
+  周期$T$を満たす運動のうち、$\delta S[q(T)]=0$を満たす$q_0(T)$について$W(T)=ET+S[q_0(T)]$とする。SPAを用いると
   \begin{align*}
-    \trace\frac{1}{E-\hat{H}+i\eta} & =-i\int_0^{\infty}dT\,e^{iET}\int dq\,\bra{q}e^{-i\hat{H}T}\ket{q} \\
-                                    & = -i\int_0^{\infty}dT\,e^{iET}\int dq\,\int\mathcal{D}[q]e^{iS[q]}
+            & \int_0^{\infty}dT\,e^{iET}\int dq\,\int\mathcal{D}[q]e^{iS[q]}
+    \approx\int_0^{\infty}dT\,Ae^{iET + iS[q_0(T)]}                                                                                 \\
+    \approx & A\sum_{m=1}^{\infty}f_m e^{iW(T_m)} =A\sum_{m=1}^{\infty}e^{im\pi}\qty(e^{iW(T)})^m = \frac{-Ae^{iW(T)}}{1+e^{iW(T)}}
   \end{align*}
   \begin{itemize}
-    \item SPAで右辺を計算し、極を与える$E$を求める。
-    \item $\delta S[q_0]=0$のとき、$q_0$はEuler-Lagrange方程式の解となる。
-    \item $q(0)=q(T)$の境界条件を満たしている。（周期運動）
+    \item $\delta S[q_0(T)]=0$であり、$q_0(T)$はEuler-Lagrange方程式を満たす
+    \item 周期$T(E)$に対して、$W(mT)=mW(T)$を満たしている
+    \item $1+e^{iW(T)}=0\Leftrightarrow W(T)=(2n+1)\pi$はBohr-Sommerfeldの量子化条件に対応
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{1粒子系での例}
+  1つの極小値を持つポテンシャル$V(q)$内を運動する粒子について考える
+  \begin{columns}[t]
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item $m\dv[2]{q_0}{t} = -\grad V(q_0)$
+        \item $E-V(q)\geq0$の領域で周期運動
+        \item 実際には$W(T)=(2n+1)\pi$を満たす周期$T$の運動が実現する
+        \item $T(E)=2\int_{q_1}^{q_2}dq\,\sqrt{\frac{m}{2(E-V(q))}}$\\から$E=E_{n}^{~0}$が求まる
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \adjincludegraphics[width=1\linewidth,valign=t]{pot1.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{1粒子系での例}
+  ここで、$t$を準虚数として、$it\to\tau$という変換を考える。
+  \begin{columns}[t]
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item $m\dv[2]{q_0}{\tau} = -\grad \qty[-V(q_0)]$
+        \item 反転したポテンシャル内で$q_2\leq q\leq q_3$を運動しているように見える
+        \item 虚時間方向では$\delta S[q_0]=0$が成立しており、SPAでは考慮する必要がある
+        \item $E=E_{n}^{~0}$は準安定状態であることが計算からわかる
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \adjincludegraphics[width=1\linewidth,valign=t]{pot2.png}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{1粒子系での例}
+  虚時間方向での周期運動を考慮して$\trace(E-\hat{H})^{-1}$の計算をする
+  \begin{equation*}
+    \trace\frac{1}{E-\hat{H}+i\eta} \propto \frac{-2e^{i(W_1+W_3)}-e^{iW_1}-e^{-W_2}-e^{iW_3}}{(1+e^{iW_1})(1+e^{iW_3})+e^{-W_2}}
+  \end{equation*}
+  \begin{itemize}
+    \item $e^{iW_3}$からの寄与は小さく、$1+e^{iW_1(E)}=-e^{-W_2(E)}$を満たす
+    \item $E=E_{n}^{~0}+\varDelta E_n$として、補正項$\varDelta E_n$を求めると
+          \begin{equation*}
+            E = E_{n}^{~0} -\frac{i\Gamma_n}{2}\,,\quad \Gamma_n = 2\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}
+          \end{equation*}
+    \item $\Gamma_n$は寿命の逆数であり、準安定状態がトンネル効果で崩壊するWKB近似の式として知られている
   \end{itemize}
 
 
 
-\end{frame}
-\begin{frame}{1粒子の1次元系でのトンネル効果}
 
 \end{frame}
 
-\section{結果}
 
 \section{まとめ}
 
