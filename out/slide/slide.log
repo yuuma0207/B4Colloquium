@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  2 JUL 2023 19:16
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  2 JUL 2023 19:19
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1264,9 +1264,13 @@ File: pot2.png Graphic file (type bmp)
 
 ] (out/slide/slide.toc) [17
 
-] (out/slide/slide.toc) [18
+] [18
 
-] [19
+] (out/slide/slide.toc) [19
+
+] (out/slide/slide.toc) [20
+
+] [21
 
 ]
 ***** List of packages loaded by `plautopatch': *****
@@ -1283,15 +1287,15 @@ File: pot2.png Graphic file (type bmp)
 
 (out/slide/slide.aux)
 Package rerunfilecheck Info: File `slide.out' has not changed.
-(rerunfilecheck)             Checksum: E141940E4A84FC9B963240C1DA7723EE;389.
+(rerunfilecheck)             Checksum: 4D0E33CDB50B8513B9F7AE6AD4552A71;448.
  ) 
 Here is how much of TeX's memory you used:
- 31464 strings out of 475422
- 606549 string characters out of 5788032
- 901032 words of memory out of 5000000
- 52483 multiletter control sequences out of 15000+600000
+ 31473 strings out of 475422
+ 606643 string characters out of 5788032
+ 901221 words of memory out of 5000000
+ 52490 multiletter control sequences out of 15000+600000
  600334 words of font info for 150 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  128i,14n,122p,460b,1047s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/slide/slide.dvi (19 pages, 113896 bytes).
+Output written on out/slide/slide.dvi (21 pages, 132040 bytes).
