@@ -209,6 +209,7 @@
         \item トンネル効果による原子核反応が存在する
         \item 1次元模型では、ガモフによる$\alpha$崩壊の理論やWKB近似などがある
         \item 実際の核分裂の計算では精度を良くすることが難しい
+        \item 平均場理論の枠組みでこれらの反応を記述したい
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -220,7 +221,7 @@
 \begin{frame}{平均場理論}
   \begin{itemize}
     \item 多体系における相互作用を平均化して一体問題のポテンシャルとして扱う手法
-    \item 原子核中では、平均ポテンシャルによって核子の配置が決定（集団運動模型）
+    \item 原子核中では、平均ポテンシャルによって核子の配置が決定
     \item 原子核の平均ポテンシャルは、Hartree-Fock近似によって微視的に得られる
   \end{itemize}
   \begin{columns}[t]
@@ -238,7 +239,7 @@
 \begin{frame}{Hartree-Fock近似}
   \begin{itemize}
     \item 時間依存のHF方程式（TDHF方程式）は比較的簡単に扱える第一原理的な計算手法
-    \item 原子核の性質を上手く説明できる近似
+    \item 原子核の性質を上手く説明できる
   \end{itemize}
   \begin{block}{TDHFの問題点}
     \begin{itemize}
@@ -246,7 +247,7 @@
             \begin{itemize}
               \item 複数のスレーター行列式の線形結合で波動関数を表すことで、より正確な状態が得られることが知られている
             \end{itemize}
-      \item 重い原子核の核分裂反応を正しく記述できない
+      \item 重い原子核に適用できないことがわかった
             \begin{itemize}
               \item トンネル効果などの量子効果を正確に記述出来ていない
             \end{itemize}
@@ -269,8 +270,8 @@
       \begin{exampleblock}{経路積分のイメージ}
         \begin{itemize}
           \item 状態の遷移確率振幅が経路積分で与えられる。
-          \item 始状態$(q_i,t_i)$から終状態$(q_f,t_f)$\\に至るあらゆる経路が寄与する
-          \item 作用の変分が$\delta S[q]=0$となる経路$q(t)$からの寄与が大きい
+          \item 始状態$(q_i,t_i)$から終状態$(q_f,t_f)$\\に至るあらゆる経路の和を取る
+          \item 作用の変分が$\delta S[q]=0$となる経路からの寄与が大きい
         \end{itemize}
       \end{exampleblock}
     \end{column}
@@ -324,7 +325,7 @@
           \end{itemize}
           \begin{align*}
             \trace\frac{1}{E-\hat{H}+i\eta} & =-i\int_0^{\infty}dT\,e^{iET}\int dq\,\bra{q}e^{-i\hat{H}T}\ket{q} \\
-                                            & = -i\int_0^{\infty}dT\,e^{iET}\int dq\,\int\mathcal{D}[q]e^{iS[q]}
+                                            & = -i\int_0^{\infty}dT\,e^{iET}\int dq\,\int\mathcal{D}q\,e^{iS[q]}
           \end{align*}
           \begin{itemize}
             \item $q(0)=q(T)$の境界条件（周期運動）を満たした経路積分
@@ -340,7 +341,7 @@
 \begin{frame}{エネルギー固有値を求める}
   周期$T$を満たす運動のうち、$\delta S[q(T)]=0$を満たす$q_0(T)$について$W(T)=ET+S[q_0(T)]$とする。SPAを用いると
   \begin{align*}
-            & \int_0^{\infty}dT\,e^{iET}\int dq\,\int\mathcal{D}[q]e^{iS[q]}
+            & \int_0^{\infty}dT\,e^{iET}\int dq\,\int\mathcal{D}q\,e^{iS[q]}
     \approx\int_0^{\infty}dT\,Ae^{iET + iS[q_0(T)]}                                                                                 \\
     \approx & A\sum_{m=1}^{\infty}f_m e^{iW(T_m)} =A\sum_{m=1}^{\infty}e^{im\pi}\qty(e^{iW(T)})^m = \frac{-Ae^{iW(T)}}{1+e^{iW(T)}}
   \end{align*}
@@ -399,10 +400,24 @@
           \end{equation*}
     \item $\Gamma_n$は寿命の逆数であり、準安定状態がトンネル効果で崩壊するWKB近似の式として知られている
   \end{itemize}
+\end{frame}
 
-
-
-
+\begin{frame}{1粒子系での例}
+  \begin{columns}[t]
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item 単純なHF方程式で得られる基底状態$q_1$は準安定状態
+        \item $q_2$までトンネリングした後は$q$が増大する方向へ運動する
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \adjincludegraphics[width=1\linewidth,valign=t]{tunneling_pot.png}
+    \end{column}
+  \end{columns}
+  時刻$t$で$q_1$の状態にいる確率$P(t)$は、$E=E_n^{~0}-i\Gamma_n/2$より
+  \begin{equation*}
+    P(t) = \abs{\braket{q_1}{\psi(t)}}^2 = \abs{\bra{q_1}e^{-iEt/\hbar}\ket{q_1}}^2 = e^{-\Gamma_nt/\hbar}
+  \end{equation*}
 \end{frame}
 
 
@@ -426,14 +441,14 @@
 \begin{frame}{\ce{^{8}Be -> ^{4}He + ^{4}He}の計算結果}
   \adjincludegraphics[width=1\linewidth,valign=t]{Be.png}
   \begin{itemize}
-    \item 原子核が変形していき、最終的に2つの粒子に分かれている
-    \item この時間発展の様子はどのように計算してる？
+    \item 原子核が変形し、最終的に2つの粒子に分かれている
+    \item この時間発展の様子はどのように計算してる？ $Q_1\to Q_3$の時間発展は追うことができない？
   \end{itemize}
 \end{frame}
 \begin{frame}{まとめ}
   \begin{itemize}
     \item 平均場理論＋経路積分でトンネル効果を記述できる
-    \item HF方程式を解くことで状態を得られるため、少数核子系での数値計算が可能
+    \item HF方程式を解くことでトンネリング解の状態を得ることができる
   \end{itemize}
   \begin{itemize}
     \item 重い核（\ce{^{238}U}など）に適用するためには、計算コストや精度の問題がある
