@@ -196,21 +196,25 @@
 
 \begin{frame}{論文の目的}
   \begin{itemize}
-    \item 平均場理論(TDHF)＋経路積分で核分裂反応を記述する
-    \item
+    \item 平均場理論(TDHF)＋経路積分でトンネル効果を記述する
+    \item 少数核子系の核分裂反応を数値計算で再現する
   \end{itemize}
-
-
 \end{frame}
 
 
-\begin{frame}{核分裂について}
-  \begin{itemize}
-    \item 核分裂についての説明
-    \item 図とかをいれる
-    \item 重い元素と軽い元素どちらでも起こる？\ce{Be^8}の核分裂と\ce{U^{235}}の分裂の仕組みは同じ？
-    \item トンネル効果
-  \end{itemize}
+\begin{frame}{背景}
+  \begin{columns}[t]
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item トンネル効果による原子核反応が存在する
+        \item 1次元模型では、ガモフによる$\alpha$崩壊の理論やWKB近似などがある
+        \item 実際の核分裂の計算では精度を良くすることが難しい
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \adjincludegraphics[height=1\linewidth,valign=t]{tunneling.png}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{平均場理論}
@@ -234,6 +238,7 @@
 \begin{frame}{Hartree-Fock近似}
   \begin{itemize}
     \item 時間依存のHF方程式（TDHF方程式）は比較的簡単に扱える第一原理的な計算手法
+    \item 原子核の性質を上手く説明できる近似
   \end{itemize}
   \begin{block}{TDHFの問題点}
     \begin{itemize}
@@ -406,7 +411,7 @@
     \begin{column}{.5\textwidth}
       \begin{itemize}
         \item 原子核のポテンシャルが先程と同じ形状
-        \item \serifRoman{2}のポテンシャル障壁を乗り越えて\serifRoman{3}の領域へ時間発展
+        \item \serifRoman{2}のポテンシャル障壁をトンネリングして\serifRoman{3}の領域へ時間発展
         \item 波動関数はHartree-Fock方程式によって求められる
         \item 核子の四重極モーメント$Q$が大きいほど原子核が変形
       \end{itemize}
@@ -421,17 +426,24 @@
 \begin{frame}{\ce{^{8}Be -> ^{4}He + ^{4}He}の計算結果}
   \adjincludegraphics[width=1\linewidth,valign=t]{Be.png}
   \begin{itemize}
+    \item 原子核が変形していき、最終的に2つの粒子に分かれている
     \item この時間発展の様子はどのように計算してる？
-    \item \ce{^{8}Be}のポテンシャルは最初からHFで計算していた？
   \end{itemize}
 \end{frame}
 \begin{frame}{まとめ}
   \begin{itemize}
-    \item 平均場理論に経路積分を取り入れることでトンネル効果を再現できる
+    \item 平均場理論＋経路積分でトンネル効果を記述できる
     \item HF方程式を解くことで状態を得られるため、少数核子系での数値計算が可能
   \end{itemize}
-  重い核（\ce{^{238}U}など）に適用するためには、計算コスト$\order{e^N}$やメモリの問題
+  \begin{itemize}
+    \item 重い核（\ce{^{238}U}など）に適用するためには、計算コストや精度の問題がある
 
+          \begin{itemize}
+            \item 波動関数が各粒子の座標$\bm{r}_1,\,\bm{r}_2,\,\dots,\,\bm{r}_N$に依存する
+            \item 精度を上げるためには空間、時間のメッシュ数を多くする必要がある
+            \item 現在のコンピュータでは計算可能
+          \end{itemize}
+  \end{itemize}
 
 \end{frame}
 \end{document}
