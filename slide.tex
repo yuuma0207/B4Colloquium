@@ -97,6 +97,92 @@
 \usepackage{array} % needed for \arraybackslash
 \usepackage{adjustbox} % for \adjincludegraphics
 
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\makeatletter
+\chardef\zenkakuSpace=\jis"2121\relax % 和文ゴースト用全角スペース
+
+\def\serifRoman#1{%
+  \ifnum0\ifnum#1<1 1\fi\ifnum#1>12 1\fi>0 %%% 引数が 1～12 の範囲外ならエラー
+    \@latex@error{\string\serifRoman: #1 must be 1..12}\@ehc
+  \fi
+  \zenkakuSpace\kern-1zw\relax %%% ゴースト処理（入口側）
+  \begingroup
+  \@tempcnta="215F\relax
+  \advance\@tempcnta by #1\relax
+  \kchardef\@roman@char=\ucs\@tempcnta\relax %% 今回対象のローマ数字
+  \kchardef\@roman@I=\ucs"2160\relax %% ヒゲとして利用するローマ数字Ⅰ
+  \@tempdima=-.132zw\relax
+  \@tempdimb=.134zw\relax
+  \@tempdimc=1zw\relax
+  \setbox1\hbox to 1zw{\yoko\hfill
+    \begin{tikzpicture}[baseline=(A.base),inner sep=0pt, outer sep=0pt]%
+    \path[use as bounding box] (-.5\@tempdimc, -.5\@tempdimc) rectangle (.5\@tempdimc, .5\@tempdimc);
+    \node (A) {\@roman@char};
+    \ifcase#1
+      \or % Ⅰ
+        \@serifRoman@a{.45}{0}% 上ヒゲ
+        \@serifRoman@b{.45}{0}% 下ヒゲ
+      \or % Ⅱ
+        \@serifRoman@a{.80}{0}% 上ヒゲ
+        \@serifRoman@b{.80}{0}% 下ヒゲ
+      \or % Ⅲ
+        \@serifRoman@a{1.10}{0}% 上ヒゲ
+        \@serifRoman@b{1.10}{0}% 下ヒゲ
+      \or % Ⅳ
+        \@serifRoman@a{.60}{-.24}% 左上ヒゲ
+        \@serifRoman@a{.30}{.38}%% 右上ヒゲ
+        \@serifRoman@b{.30}{-.35}% 左下ヒゲ
+      \or % Ⅴ
+        \@serifRoman@a{.30}{-.28}% 左上ヒゲ
+        \@serifRoman@a{.30}{.28}%% 右上ヒゲ
+      \or % Ⅵ
+        \@serifRoman@a{.30}{-.38}% 左上ヒゲ
+        \@serifRoman@a{.60}{.24}%% 右上ヒゲ
+        \@serifRoman@b{.30}{.34}%% 右下ヒゲ
+      \or % Ⅶ
+        \@serifRoman@a{.30}{-.41}% 左上ヒゲ
+        \@serifRoman@a{.75}{.20}%% 右上ヒゲ
+        \@serifRoman@b{.52}{.28}%% 右下ヒゲ
+      \or % Ⅷ
+        \@serifRoman@a{.30}{-.41}% 左上ヒゲ
+        \@serifRoman@a{.82}{.18}%% 右上ヒゲ
+        \@serifRoman@b{.65}{.245}% 右下ヒゲ
+      \or % Ⅸ
+        \@serifRoman@a{.25}{.33}%% 右上ヒゲ
+        \@serifRoman@a{.55}{-.22}% 左上ヒゲ
+        \@serifRoman@b{.55}{-.22}% 左下ヒゲ
+        \@serifRoman@b{.25}{.36}%% 右下ヒゲ
+      \or % Ⅹ
+        \@serifRoman@a{.25}{.23}%% 右上ヒゲ
+        \@serifRoman@a{.25}{-.23}% 左上ヒゲ
+        \@serifRoman@b{.25}{-.26}% 左下ヒゲ
+        \@serifRoman@b{.25}{.26}%% 右下ヒゲ
+      \or % Ⅺ
+        \@serifRoman@a{.55}{.23}%% 右上ヒゲ
+        \@serifRoman@a{.25}{-.34}% 左上ヒゲ
+        \@serifRoman@b{.25}{-.36}% 左下ヒゲ
+        \@serifRoman@b{.55}{.23}%% 右下ヒゲ
+      \or % Ⅻ
+        \@serifRoman@a{.75}{.20}%% 右上ヒゲ
+        \@serifRoman@a{.25}{-.38}% 左上ヒゲ
+        \@serifRoman@b{.25}{-.40}% 左下ヒゲ
+        \@serifRoman@b{.75}{.20}%% 右下ヒゲ
+    \fi
+    \end{tikzpicture}%
+    \hfill}%
+  \box1\relax
+  \endgroup
+  \kern-1zw\relax\zenkakuSpace %%% ゴースト処理（出口側）
+}
+\def\@serifRoman@a#1#2{%
+  \node[rotate=90,xscale=.7,yscale=#1] at ($(A.north) + (#2\@tempdimc,\@tempdima)$) {\@roman@I};
+}
+\def\@serifRoman@b#1#2{%
+  \node[rotate=90,xscale=.7,yscale=#1] at ($(A.south) + (#2\@tempdimc,\@tempdimb)$) {\@roman@I};
+}
+\makeatother
+
 
 %タイトル
 \title{J.W.Negele, Nuclear Mean-Field Theory, Physics Today 38, 24(1985)}
@@ -106,9 +192,18 @@
 
 \begin{document}
 \maketitle
-\frame{\tableofcontents[hideallsubsections]}
+%\frame{\tableofcontents[hideallsubsections]}
 
-\section{背景}
+\begin{frame}{論文の目的}
+  \begin{itemize}
+    \item 平均場理論(TDHF)＋経路積分で核分裂反応を記述する
+    \item
+  \end{itemize}
+
+
+\end{frame}
+
+
 \begin{frame}{核分裂について}
   \begin{itemize}
     \item 核分裂についての説明
@@ -155,7 +250,7 @@
 \end{frame}
 
 
-\section{目的}
+
 \begin{frame}{平均場理論の枠組みで核分裂反応を記述する}
   \begin{block}{経路積分を使う理由}
     \begin{itemize}
@@ -215,7 +310,7 @@
   \end{block}
 \end{frame}
 
-\section{手法}
+
 \begin{frame}{トンネリング解を計算する方法}
   \begin{enumerate}
     \item トンネリング解に対応するエネルギー固有値を求める
@@ -305,29 +400,38 @@
 
 \end{frame}
 
-\section{結果}
+
 \begin{frame}{核子多体系に適用する}
-
-
-
+  \begin{columns}[t]
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item 原子核のポテンシャルが先程と同じ形状
+        \item \serifRoman{2}のポテンシャル障壁を乗り越えて\serifRoman{3}の領域へ時間発展
+        \item 波動関数はHartree-Fock方程式によって求められる
+        \item 核子の四重極モーメント$Q$が大きいほど原子核が変形
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \adjincludegraphics[width=1\linewidth,valign=t]{kakusitataikei.png}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-\section{まとめ}
 
-\section{アルゴリズム}
-\begin{frame}{アルゴリズムサンプル}
-  \begin{block}{Matrix Multiplication}
-    \begin{algorithmic}[1]
-      \STATE $C = O$
-      \FOR{$i = 1, \dots, m$}
-      \FOR{$j = 1, \dots, n$}
-      \FOR{$k = 1, \dots, r$}
-      \STATE $C[i,j] = C[i,j] + A[i, k] \cdot B[k, j]$
-      \ENDFOR
-      \ENDFOR
-      \ENDFOR
-      \RETURN $C$
-    \end{algorithmic}
-  \end{block}
+\begin{frame}{\ce{^{8}Be -> ^{4}He + ^{4}He}の計算結果}
+  \adjincludegraphics[width=1\linewidth,valign=t]{Be.png}
+  \begin{itemize}
+    \item この時間発展の様子はどのように計算してる？
+    \item \ce{^{8}Be}のポテンシャルは最初からHFで計算していた？
+  \end{itemize}
+\end{frame}
+\begin{frame}{まとめ}
+  \begin{itemize}
+    \item 平均場理論に経路積分を取り入れることでトンネル効果を再現できる
+    \item HF方程式を解くことで状態を得られるため、少数核子系での数値計算が可能
+  \end{itemize}
+  重い核（\ce{^{238}U}など）に適用するためには、計算コスト$\order{e^N}$やメモリの問題
+
+
 \end{frame}
 \end{document}
