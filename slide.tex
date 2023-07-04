@@ -264,7 +264,7 @@
 \begin{frame}{平均場理論の枠組みで核分裂反応を記述する}
   \begin{block}{経路積分を使う理由}
     \begin{itemize}
-      \item トンネル効果を含む量子論の現象を記述できる
+      \item 多体系でのトンネル効果を含む量子論の現象を記述できる
       \item 鞍点法（Stationary Phase Approximation：SPA）で近似ができる
     \end{itemize}
   \end{block}
@@ -430,6 +430,23 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}
+  \frametitle{1粒子系での例}
+  \begin{equation*}
+    \varDelta E_n = -i\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}\quad\text{を得る理由}
+  \end{equation*}
+  極を与えるエネルギーは$1+e^{iW_1(E)}=e^{-W_2(E)}$を満たしていた。\\
+  また、$1+e^{iW_1(E_n^{~0})}=0$に注意すると
+  \begin{align*}
+     & 1+e^{iW_1(E_n^{~0}+\varDelta E_n)}=-e^{-W_2(E_n^{~0}+\varDelta E_n)}                                          \\
+     & 1+\underbrace{e^{iW_1(E_n^{~0})}}_{=-1}\qty(1+i\pdv{W_1(E_n^{~0})}{E}\varDelta E_n) = -e^{-W_2(E_n^{~0})}     \\
+     & \varDelta E_n = -i\frac{1}{T(E_n^{~0})}e^{-W_2(E_n^{~0})} = -i\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}
+  \end{align*}
+
+
+
+\end{frame}
+
 \begin{frame}{1粒子系での例}
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
@@ -490,6 +507,17 @@
             \item 現在のコンピュータでは計算可能
           \end{itemize}
   \end{itemize}
+\end{frame}
+\begin{frame}
+  \frametitle{Appendix}
+  \begin{itemize}
+    \item 経路積分の途中計算
+    \item 2次元のポテンシャル面が虚時間上で極小値に落ちていく図をのせる
+    \item $\alpha$崩壊の理論やWKB近似の理論についての説明
+    \item HF方程式を載せる
+    \item 現在のコンピューターでどのくらい時間がかかるのか
+  \end{itemize}
+
 
 \end{frame}
 \end{document}
