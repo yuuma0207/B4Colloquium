@@ -188,28 +188,23 @@
 \title{J.W.Negele, Nuclear Mean-Field Theory, Physics Today 38, 24(1985)}
 \author{\textbf{松本侑真}}
 \date{\today}
-\institute{}
+\institute{原子核理論 関澤研究室}
 
 \begin{document}
 \maketitle
 %\frame{\tableofcontents[hideallsubsections]}
 
-\begin{frame}{論文の目的}
-  \begin{itemize}
-    \item 平均場理論(TDHF)＋経路積分でトンネル効果を記述する
-    \item 少数核子系の核分裂反応を数値計算で再現する
-  \end{itemize}
-\end{frame}
+
 
 
 \begin{frame}{背景}
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
-        \item トンネル効果による原子核反応が存在する
+        \item トンネル効果によって生じる現象が存在する
         \item 1次元模型では、ガモフによる$\alpha$崩壊の理論やWKB近似などがある
-        \item 実際の核分裂の計算では精度を良くすることが難しい
-        \item 平均場理論の枠組みでこれらの反応を記述したい
+        \item 実際の核分裂は多粒子系のトンネル現象かつ複雑な形状の自由度があり、微視的な計算が困難
+        \item 日本原子力研究開発機構 岩本昭 基礎科学ノート Vol.5 No.1(1998)
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -218,10 +213,19 @@
   \end{columns}
 \end{frame}
 
+\begin{frame}{論文の目的}
+  J.W.Negele, Nuclear Mean-Field Theory, Physics Today 38, 24(1985)では
+  \begin{itemize}
+    \item 平均場理論＋経路積分でトンネル効果を記述する
+    \item 少数核子系の核分裂反応を数値計算で再現する
+  \end{itemize}
+  ことを議論している
+\end{frame}
+
 \begin{frame}{平均場理論}
   \begin{itemize}
     \item 多体系における相互作用を平均化して一体問題のポテンシャルとして扱う手法
-    \item 原子核中では、平均ポテンシャルによって核子の配置が決定
+    \item 原子核中では、平均ポテンシャルによって核子の配置が決定（集団運動模型）
     \item 原子核の平均ポテンシャルは、Hartree-Fock近似によって微視的に得られる
   \end{itemize}
   \begin{columns}[t]
@@ -238,8 +242,8 @@
 \end{frame}
 \begin{frame}{Hartree-Fock近似}
   \begin{itemize}
-    \item 時間依存のHF方程式（TDHF方程式）は比較的簡単に扱える第一原理的な計算手法
-    \item 原子核の性質を上手く説明できる
+    \item Hartree-Fock（HF）近似は原子核の性質（束縛エネルギーや変形度）を上手く説明できる
+    \item 時間依存のHF方程式（TDHF方程式）は核子自由度から微視的に原子核ダイナミクスを記述できる
   \end{itemize}
   \begin{block}{TDHFの問題点}
     \begin{itemize}
@@ -247,8 +251,9 @@
             \begin{itemize}
               \item 複数のスレーター行列式の線形結合で波動関数を表すことで、より正確な状態が得られることが知られている
             \end{itemize}
-      \item 重い原子核に適用できないことがわかった
+      \item 重い原子核の核分裂反応を正しく記述できない
             \begin{itemize}
+              \item 核分裂していない状態と核分裂している状態の重ね合わせが記述できない
               \item トンネル効果などの量子効果を正確に記述出来ていない
             \end{itemize}
     \end{itemize}
@@ -371,6 +376,30 @@
 \end{frame}
 
 \begin{frame}{1粒子系での例}
+  \begin{columns}[t]
+    \begin{column}{.5\textwidth}
+      \begin{itemize}
+        \item 量子力学の結果では、トンネル効果によってポテンシャル障壁を乗り越える
+        \item $q_3$にトンネリングした後は$q$が増大する方向へ運動する
+      \end{itemize}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \adjincludegraphics[width=1\linewidth,valign=t]{tunneling_pot.png}
+    \end{column}
+  \end{columns}
+  \begin{columns}[t]
+    \begin{column}{.9\textwidth}
+      \begin{itemize}
+        \item 先ほどは$q_1\leq q \leq q_2$での周期運動のみを考えていた
+      \end{itemize}
+    \end{column}
+    \begin{column}{.1\textwidth}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}{1粒子系での例}
   ここで、$t$を準虚数として、$it\to\tau$という変換を考える。
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
@@ -378,7 +407,7 @@
         \item $m\dv[2]{q_0}{\tau} = -\grad \qty[-V(q_0)]$
         \item 反転したポテンシャル内で$q_2\leq q\leq q_3$を運動しているように見える
         \item 虚時間方向では$\delta S[q_0]=0$が成立しており、SPAでは考慮する必要がある
-        \item $E=E_{n}^{~0}$は準安定状態であることが計算からわかる
+        \item $q_{\text{classical}}$は準安定状態であることが計算からわかる
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -390,10 +419,10 @@
 \begin{frame}{1粒子系での例}
   虚時間方向での周期運動を考慮して$\trace(E-\hat{H})^{-1}$の計算をする
   \begin{equation*}
-    \trace\frac{1}{E-\hat{H}+i\eta} \propto \frac{-2e^{i(W_1+W_3)}-e^{iW_1}-e^{-W_2}-e^{iW_3}}{(1+e^{iW_1})(1+e^{iW_3})+e^{-W_2}}
+    \trace\frac{1}{E-\hat{H}+i\eta} \propto \frac{-3e^{iW_1}-e^{-W_2}}{1+e^{iW_1}+e^{-W_2}}
   \end{equation*}
   \begin{itemize}
-    \item $e^{iW_3}$からの寄与は小さく、$1+e^{iW_1(E)}=-e^{-W_2(E)}$を満たす
+    \item $1+e^{iW_1(E)}=-e^{-W_2(E)}$が極となる
     \item $E=E_{n}^{~0}+\varDelta E_n$として、補正項$\varDelta E_n$を求めると
           \begin{equation*}
             E = E_{n}^{~0} -\frac{i\Gamma_n}{2}\,,\quad \Gamma_n = 2\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}
@@ -406,17 +435,17 @@
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
-        \item 単純なHF方程式で得られる基底状態$q_1$は準安定状態
-        \item $q_2$までトンネリングした後は$q$が増大する方向へ運動する
+        \item 単純なHF方程式で得られる基底状態$q_{\text{classical}}$は準安定状態
+        \item $q_3$にトンネリングした後は$q$が増大する方向へ運動する
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
       \adjincludegraphics[width=1\linewidth,valign=t]{tunneling_pot.png}
     \end{column}
   \end{columns}
-  時刻$t$で$q_1$の状態にいる確率$P(t)$は、$E=E_n^{~0}-i\Gamma_n/2$より
+  時刻$t$で$q_{\text{classical}}$の状態にいる確率$P(t)$は、$E=E_n^{~0}-i\Gamma_n/2$より
   \begin{equation*}
-    P(t) = \abs{\braket{q_1}{\psi(t)}}^2 = \abs{\bra{q_1}e^{-iEt/\hbar}\ket{q_1}}^2 = e^{-\Gamma_nt/\hbar}
+    P(t) = \abs{\braket{q_{\text{classical}}}{\psi(t)}}^2 = \abs{\bra{q_{\text{classical}}}e^{-iEt/\hbar}\ket{q_{\text{classical}}}}^2 = e^{-\Gamma_nt/\hbar}
   \end{equation*}
 \end{frame}
 
@@ -425,10 +454,10 @@
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
-        \item 原子核のポテンシャルが先程と同じ形状
-        \item \serifRoman{2}のポテンシャル障壁をトンネリングして\serifRoman{3}の領域へ時間発展
-        \item 波動関数はHartree-Fock方程式によって求められる
         \item 核子の四重極モーメント$Q$が大きいほど原子核が変形
+        \item 原子核のポテンシャルが先程と同じような形状
+        \item \serifRoman{2}のポテンシャル障壁をトンネリングして\serifRoman{3}の領域へ時間発展
+        \item 波動関数はHF方程式によって求められる
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -442,7 +471,9 @@
   \adjincludegraphics[width=1\linewidth,valign=t]{Be.png}
   \begin{itemize}
     \item 原子核が変形し、最終的に2つの粒子に分かれている
-    \item この時間発展の様子はどのように計算してる？ $Q_1\to Q_3$の時間発展は追うことができない？
+    \item Negeleの他の論文にも図は載っているが、詳細な評価は見つけられない
+    \item 現在に至るまで、虚時間法の応用があまりされていない
+    \item 卒研で1次元のHF計算を行い、虚時間法でトンネル現象を再現する予定
   \end{itemize}
 \end{frame}
 \begin{frame}{まとめ}
@@ -455,6 +486,7 @@
 
           \begin{itemize}
             \item 波動関数が各粒子の座標$\bm{r}_1,\,\bm{r}_2,\,\dots,\,\bm{r}_N$に依存する
+            \item 多次元のポテンシャル面による透過問題（1次元ではない）
             \item 精度を上げるためには空間、時間のメッシュ数を多くする必要がある
             \item 現在のコンピュータでは計算可能
           \end{itemize}
