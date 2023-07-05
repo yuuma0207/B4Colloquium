@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  4 JUL 2023 17:51
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  5 JUL 2023 10:24
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1278,72 +1278,78 @@ File: keiro.png Graphic file (type bmp)
 <keiro.png>
 [6
 
-] [7
+]
+Overfull \vbox (7.63211pt too high) detected at line 303
+ []
 
-] [8
+[7
 
 ]
 LaTeX Font Info:    Font shape `JT2/hgt/bx/n' will be
-(Font)              scaled to size 7.69775pt on input line 343.
+(Font)              scaled to size 7.69775pt on input line 325.
 LaTeX Font Info:    Font shape `JY2/hgt/bx/n' will be
-(Font)              scaled to size 7.69775pt on input line 343.
+(Font)              scaled to size 7.69775pt on input line 325.
 LaTeX Font Info:    Font shape `T1/qhv/bx/n' in size <8> not available
-(Font)              Font shape `T1/qhv/b/n' tried instead on input line 343.
+(Font)              Font shape `T1/qhv/b/n' tried instead on input line 325.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 7.52002pt on input line 343.
-[9
+(Font)              scaled to size 7.52002pt on input line 325.
+[8
 
-] [10
+]
+Overfull \vbox (6.43306pt too high) detected at line 339
+ []
+
+[9
 
 ]
 File: pot1.png Graphic file (type bmp)
 <pot1.png>
+[10
+
+]
+File: tunneling_pot.png Graphic file (type bmp)
+<tunneling_pot.png>
 [11
 
 ]
-File: tunneling_pot.png Graphic file (type bmp)
-<tunneling_pot.png>
-[12
-
-]
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 416.
+(Font)              scaled to size 9.6222pt on input line 388.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 416.
+(Font)              scaled to size 9.6222pt on input line 388.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 9.40002pt on input line 416.
+(Font)              scaled to size 9.40002pt on input line 388.
 LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 416.
+(Font)              scaled to size 6.73553pt on input line 388.
 LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 416.
+(Font)              scaled to size 6.73553pt on input line 388.
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 6.58002pt on input line 416.
+(Font)              scaled to size 6.58002pt on input line 388.
 File: pot2.png Graphic file (type bmp)
 <pot2.png>
-[13
+[12
+
+] [13
 
 ] [14
 
-] [15
-
 ]
 File: tunneling_pot.png Graphic file (type bmp)
 <tunneling_pot.png>
-[16
+[15
 
 ]
 File: kakusitataikei.png Graphic file (type bmp)
 <kakusitataikei.png>
-[17
+[16
 
 ]
 File: Be.png Graphic file (type bmp)
 <Be.png>
-[18
+[17
+
+] [18
 
 ] [19
-
-] [20
 
 ]
 ***** List of packages loaded by `plautopatch': *****
@@ -1363,12 +1369,12 @@ Package rerunfilecheck Info: File `slide.out' has not changed.
 (rerunfilecheck)             Checksum: 05B9FF7757FE6A446D8F294B02146D28;54.
  ) 
 Here is how much of TeX's memory you used:
- 33978 strings out of 475422
- 666311 string characters out of 5788032
- 955491 words of memory out of 5000000
- 54970 multiletter control sequences out of 15000+600000
+ 33976 strings out of 475422
+ 666295 string characters out of 5788032
+ 956491 words of memory out of 5000000
+ 54968 multiletter control sequences out of 15000+600000
  608195 words of font info for 159 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  128i,20n,122p,460b,1063s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/slide/slide.dvi (20 pages, 96032 bytes).
+Output written on out/slide/slide.dvi (19 pages, 92620 bytes).

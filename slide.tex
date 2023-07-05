@@ -218,7 +218,7 @@
     \item 平均場理論＋経路積分でトンネル効果を記述する
     \item 少数核子系の核分裂反応を数値計算で再現する
   \end{itemize}
-  ことを議論している
+  ことが目的
 \end{frame}
 
 \begin{frame}{平均場理論}
@@ -273,8 +273,8 @@
       \vspace{-5mm}
       \begin{exampleblock}{経路積分のイメージ}
         \begin{itemize}
-          \item 状態の遷移確率振幅が経路積分で与えられる。
-          \item 始状態$(q_i,t_i)$から終状態$(q_f,t_f)$\\に至るあらゆる経路の和を取る
+          \item 始状態から終状態への遷移確率振幅が経路積分で与えられる
+          \item 終状態に至るまでのあらゆる経路の和を取る
           \item 作用の変分が$\delta S[q]=0$となる経路からの寄与が大きい
         \end{itemize}
       \end{exampleblock}
@@ -286,32 +286,14 @@
 
 \end{frame}
 
+
 \begin{frame}{経路積分の数式表現}
-  \begin{itemize}
-    \item 時間発展演算子$U(t,t_0)=e^{-i\hat{H}(t-t_0)/\hbar}$
-    \item 始状態を$\ket{\psi_i}$とすると、終状態は$\ket{\psi_f}=U(t,t_0)\ket{\psi_i}$
-          \begin{equation*}
-            \psi_f(q) = \int dq'\,\bra{q}U(t,t_0)\ket{q'}\bra{q'}\ket{\psi_i}
-            = \int dq'\,K(q,q'\,;t,t_0)\psi_i(q')
-          \end{equation*}
-    \item ファインマン核$K(q_f,q_i\,;t_f,t_i)$の具体形
-          \begin{equation*}
-            K(q_f,q_i\,;t_f,t_i) = \int\mathcal{D}q\int\mathcal{D}p
-            \exp\qty[\frac{i}{\hbar}\int_{t_i}^{t_f}dt\,(p\dot{q}-H(p,q))]
-          \end{equation*}
-          \begin{equation*}
-            \int \mathcal{D}q \coloneqq \prod_{j=1}^{N-1} \int dq_j\;,\quad
-            \int \mathcal{D}p \coloneqq \prod_{j=1}^N \int \frac{dp_j}{2\pi\hbar}\;,\quad
-            t_f = t_i + N\varDelta t
-          \end{equation*}
-  \end{itemize}
-\end{frame}
-\begin{frame}{経路積分の数式表現}
-  ポテンシャルが位置にのみ依存する場合、運動量積分が計算できる。
+  ポテンシャルが一般化座標$q$にのみ依存する場合を考える。\\
+  $K(q_f,q_i\,;t_f,t_i)$は$(q_i,t_i)$から$(q_f,t_f)$への遷移確率振幅であり、
   \begin{align*}
     K(q_f,q_i\,;t_f,t_i) & = \int\mathcal{D}q
-    \exp\qty[\frac{i}{\hbar}\int_{t_i}^{t_f}dt\,\qty(\frac{m}{2}\dot{q}^2 - V(q))] \\
-                         & = \int\mathcal{D}q\exp\qty[\frac{i}{\hbar}S[q]]
+    \exp\qty[\frac{i}{\hbar}\int_{t_i}^{t_f}dt\,\qty(\frac{m}{2}\dot{q}^2 - V(q))]                                                            \\
+                         & = \int\mathcal{D}q\exp\qty[\frac{i}{\hbar}S[q]]\quad \qty(\int \mathcal{D}q \coloneqq \prod_{j=1}^{N-1} \int dq_j)
   \end{align*}
   \begin{block}{経路積分の解釈}
     $(q_i,t_i)\to(q_1,t_1)\to\cdots\to(q_{N-1},t_{N-1})\to(q_f,t_f)$
@@ -338,33 +320,33 @@
   \end{enumerate}
   \begin{enumerate}
     \setcounter{enumi}{1}
-    \item エネルギー固有値に対応する波動関数（核分裂後を記述する状態）を計算する
+    \item エネルギー固有値に対応する状態（核分裂後を記述する状態）をEuler-Lagrange方程式で計算する
   \end{enumerate}
 \end{frame}
 
 \begin{frame}{エネルギー固有値を求める}
   周期$T$を満たす運動のうち、$\delta S[q(T)]=0$を満たす$q_0(T)$について$W(T)=ET+S[q_0(T)]$とする。SPAを用いると
   \begin{align*}
-            & \int_0^{\infty}dT\,e^{iET}\int dq\,\int\mathcal{D}q\,e^{iS[q]}
-    \approx\int_0^{\infty}dT\,Ae^{iET + iS[q_0(T)]}                                                                                 \\
-    \approx & A\sum_{m=1}^{\infty}f_m e^{iW(T_m)} =A\sum_{m=1}^{\infty}e^{im\pi}\qty(e^{iW(T)})^m = \frac{-Ae^{iW(T)}}{1+e^{iW(T)}}
+            & \int_0^{\infty}dT\,e^{iET}\underbrace{\int dq\,\int\mathcal{D}q\,e^{iS[q]}}_{\approx Ae^{iS[q_0(T)]}}
+    \approx\int_0^{\infty}dT\,Ae^{i\qty(ET + S[q_0(T)])}                                                                           \\
+    \approx & A\sum_{m=1}^{\infty}f_m e^{iW(mT)} =A\sum_{m=1}^{\infty}e^{im\pi}\qty(e^{iW(T)})^m = \frac{-Ae^{iW(T)}}{1+e^{iW(T)}}
   \end{align*}
   \begin{itemize}
     \item $\delta S[q_0(T)]=0$であり、$q_0(T)$はEuler-Lagrange方程式を満たす
-    \item 周期$T(E)$に対して、$W(mT)=mW(T)$を満たしている
-    \item $1+e^{iW(T)}=0\Leftrightarrow W(T)=(2n+1)\pi$はBohr-Sommerfeldの量子化条件に対応
+    \item 基本周期$T$に対して、$W(mT)=mW(T)$を満たしている
+    \item 周期$T$が極を与える条件$1+e^{iW(T)}=0\Leftrightarrow W(T)=(2n+1)\pi$はBohr-Sommerfeldの量子化条件に対応
   \end{itemize}
 \end{frame}
 
 
 \begin{frame}{1粒子系での例}
-  1つの極小値を持つポテンシャル$V(q)$内を運動する粒子について考える
+  1つの極小値を持つポテンシャル$V(q)$内を全エネルギー$E$の元で運動する1粒子について考える
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
         \item $m\dv[2]{q_0}{t} = -\grad V(q_0)$
-        \item $E-V(q)\geq0$の領域で周期運動
-        \item 実際には$W(T)=(2n+1)\pi$を満たす周期$T$の運動が実現する
+        \item $E-V(q)\geq0$の領域で周期$T(E)$の運動
+        \item $W(T)=(2n+1)\pi$を満たす周期$T$の運動がエネルギー固有値を与える
         \item $T(E)=2\int_{q_1}^{q_2}dq\,\sqrt{\frac{m}{2(E-V(q))}}$\\から$E=E_{n}^{~0}$が求まる
       \end{itemize}
     \end{column}
@@ -378,24 +360,14 @@
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
+        \item 先ほどは$q_1\leq q \leq q_2$での周期運動のみを考えていた
         \item 量子力学の結果では、トンネル効果によってポテンシャル障壁を乗り越える
-        \item $q_3$にトンネリングした後は$q$が増大する方向へ運動する
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
       \adjincludegraphics[width=1\linewidth,valign=t]{tunneling_pot.png}
     \end{column}
   \end{columns}
-  \begin{columns}[t]
-    \begin{column}{.9\textwidth}
-      \begin{itemize}
-        \item 先ほどは$q_1\leq q \leq q_2$での周期運動のみを考えていた
-      \end{itemize}
-    \end{column}
-    \begin{column}{.1\textwidth}
-    \end{column}
-  \end{columns}
-
 \end{frame}
 
 \begin{frame}{1粒子系での例}
@@ -416,7 +388,8 @@
 \end{frame}
 
 \begin{frame}{1粒子系での例}
-  虚時間方向での周期運動を考慮して$\trace(E-\hat{H})^{-1}$の計算をする
+  虚時間方向での周期運動を考慮して$\trace(E-\hat{H})^{-1}$の計算をする\\
+  $W_2(E)$は虚時間方向での$W(E)=ET+S[q_0(T)]$
   \begin{equation*}
     \trace\frac{1}{E-\hat{H}+i\eta} \propto \frac{-3e^{iW_1}-e^{-W_2}}{1+e^{iW_1}+e^{-W_2}}
   \end{equation*}
@@ -452,6 +425,7 @@
     \begin{column}{.5\textwidth}
       \begin{itemize}
         \item 単純なHF方程式で得られる基底状態$q_{\text{classical}}$は準安定状態
+        \item 虚時間方向を考えることで、トンネル効果が考慮できる
         \item $q_3$にトンネリングした後は$q$が増大する方向へ運動する
       \end{itemize}
     \end{column}
@@ -470,8 +444,8 @@
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
-        \item 核子の四重極モーメント$Q$が大きいほど原子核が変形
-        \item 原子核のポテンシャルが先程と同じような形状
+        \item 原子核の四重極モーメント$Q$が大きいほど原子核が変形
+        \item $Q$に対するHFエネルギーは$Q_1$で極小値（$\neq$最小値）
         \item \serifRoman{2}のポテンシャル障壁をトンネリングして\serifRoman{3}の領域へ時間発展
         \item 波動関数はHF方程式によって求められる
       \end{itemize}
@@ -508,19 +482,39 @@
           \end{itemize}
   \end{itemize}
 \end{frame}
-\begin{frame}
-  \frametitle{Appendix}
+% \begin{frame}
+%   \frametitle{Appendix}
+%   \begin{itemize}
+%     \item 経路積分の途中計算
+%     \item 2次元のポテンシャル面が虚時間上で極小値に落ちていく図をのせる
+%     \item $\alpha$崩壊の理論やWKB近似の理論についての説明
+%     \item HF方程式を載せる
+%     \item 現在のコンピューターでどのくらい時間がかかるのか：基底状態を求めるのは、Qに対してHFは何日もかかる
+%     \item サブバリアー核融合とは
+%     \item 双極子モーメントを使わない理由
+%     \item スレーター行列式とは
+% \end{itemize}
+% \end{frame}
+
+\begin{frame}{Appendix：経路積分の数式表現}
   \begin{itemize}
-    \item 経路積分の途中計算
-    \item 2次元のポテンシャル面が虚時間上で極小値に落ちていく図をのせる
-    \item $\alpha$崩壊の理論やWKB近似の理論についての説明
-    \item HF方程式を載せる
-    \item 現在のコンピューターでどのくらい時間がかかるのか：基底状態を求めるのは、Qに対してHFは何日もかかる
-    \item サブバリアー核融合とは
-    \item 双極子モーメントを使わない理由
-    \item スレーター行列式とは
+    \item 時間発展演算子$U(t,t_0)=e^{-i\hat{H}(t-t_0)/\hbar}$
+    \item 始状態を$\ket{\psi_i}$とすると、終状態は$\ket{\psi_f}=U(t,t_0)\ket{\psi_i}$
+          \begin{equation*}
+            \psi_f(q) = \int dq'\,\bra{q}U(t,t_0)\ket{q'}\bra{q'}\ket{\psi_i}
+            = \int dq'\,K(q,q'\,;t,t_0)\psi_i(q')
+          \end{equation*}
+    \item ファインマン核$K(q_f,q_i\,;t_f,t_i)$の具体形
+          \begin{equation*}
+            K(q_f,q_i\,;t_f,t_i) = \int\mathcal{D}q\int\mathcal{D}p
+            \exp\qty[\frac{i}{\hbar}\int_{t_i}^{t_f}dt\,(p\dot{q}-H(p,q))]
+          \end{equation*}
+          \begin{equation*}
+            \int \mathcal{D}q \coloneqq \prod_{j=1}^{N-1} \int dq_j\;,\quad
+            \int \mathcal{D}p \coloneqq \prod_{j=1}^N \int \frac{dp_j}{2\pi\hbar}\;,\quad
+            t_f = t_i + N\varDelta t
+          \end{equation*}
   \end{itemize}
-
-
 \end{frame}
+
 \end{document}
