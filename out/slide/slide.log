@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  5 JUL 2023 11:52
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  5 JUL 2023 11:57
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1355,6 +1355,8 @@ File: Be.png Graphic file (type bmp)
 
 ] [19
 
+] [20
+
 ]
 ***** List of packages loaded by `plautopatch': *****
  pxpgfrcs, plarray, pxpgfmark, pxjahyper, pxtextpos.
@@ -1373,12 +1375,12 @@ Package rerunfilecheck Info: File `slide.out' has not changed.
 (rerunfilecheck)             Checksum: 05B9FF7757FE6A446D8F294B02146D28;54.
  ) 
 Here is how much of TeX's memory you used:
- 33976 strings out of 475422
- 666295 string characters out of 5788032
+ 33978 strings out of 475422
+ 666311 string characters out of 5788032
  956491 words of memory out of 5000000
- 54968 multiletter control sequences out of 15000+600000
+ 54970 multiletter control sequences out of 15000+600000
  608195 words of font info for 159 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  128i,20n,122p,460b,1063s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/slide/slide.dvi (19 pages, 92964 bytes).
+Output written on out/slide/slide.dvi (20 pages, 96124 bytes).
