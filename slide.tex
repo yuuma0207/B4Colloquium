@@ -261,7 +261,7 @@
 
 
 
-\begin{frame}{平均場理論の枠組みで核分裂反応を記述する}
+\begin{frame}{平均場理論（TDHF）で核分裂反応を記述する}
   \begin{block}{経路積分を使う理由}
     \begin{itemize}
       \item 多体系でのトンネル効果を含む量子論の現象を記述できる
@@ -325,11 +325,11 @@
 \end{frame}
 
 \begin{frame}{エネルギー固有値を求める}
-  周期$T$を満たす運動のうち、$\delta S[q(T)]=0$を満たす$q_0(T)$について$W(T)=ET+S[q_0(T)]$とする。SPAを用いると
+  周期$T$の運動の経路$q(T)$で、$\delta S[q(T)]=0$を満たす$q_0(T)$について$W(T)=ET+S[q_0(T)]$とする。SPAを用いると
   \begin{align*}
             & \int_0^{\infty}dT\,e^{iET}\underbrace{\int dq\,\int\mathcal{D}q\,e^{iS[q]}}_{\approx Ae^{iS[q_0(T)]}}
-    \approx\int_0^{\infty}dT\,Ae^{i\qty(ET + S[q_0(T)])}                                                                           \\
-    \approx & A\sum_{m=1}^{\infty}f_m e^{iW(mT)} =A\sum_{m=1}^{\infty}e^{im\pi}\qty(e^{iW(T)})^m = \frac{-Ae^{iW(T)}}{1+e^{iW(T)}}
+    \approx\int_0^{\infty}dT\,Ae^{i\qty(ET + S[q_0(T)])}                                                                               \\
+    \approx & A\sum_{m=1}^{\infty}f_m e^{iW(mT)} =A\sum_{m=1}^{\infty}e^{im\pi}\qty(e^{iW(T)})^m \propto \frac{e^{iW(T)}}{1+e^{iW(T)}}
   \end{align*}
   \begin{itemize}
     \item $\delta S[q_0(T)]=0$であり、$q_0(T)$はEuler-Lagrange方程式を満たす
@@ -360,8 +360,9 @@
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
-        \item 先ほどは$q_1\leq q \leq q_2$での周期運動のみを考えていた
+        \item 先ほどは$V(q)$の極小値まわりの周期運動のみを考えていた
         \item 量子力学の結果では、トンネル効果によってポテンシャル障壁を乗り越える
+        \item ポテンシャル極小値の位置$q_{\text{classical}}$は安定でない
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -371,7 +372,7 @@
 \end{frame}
 
 \begin{frame}{1粒子系での例}
-  ここで、$t$を準虚数として、$it\to\tau$という変換を考える。
+  $t$を準虚数として、$it\to\tau$という変換を考えるとトンネル効果が考慮できる
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
@@ -394,7 +395,7 @@
     \trace\frac{1}{E-\hat{H}+i\eta} \propto \frac{-3e^{iW_1}-e^{-W_2}}{1+e^{iW_1}+e^{-W_2}}
   \end{equation*}
   \begin{itemize}
-    \item $1+e^{iW_1(E)}=-e^{-W_2(E)}$が極となる
+    \item $1+e^{iW_1(E)}=-e^{-W_2(E)}$が極となる（先ほどは$1+e^{iW_1(E_n^{~0})}=0$）
     \item $E=E_{n}^{~0}+\varDelta E_n$として、補正項$\varDelta E_n$を求めると
           \begin{equation*}
             E = E_{n}^{~0} -\frac{i\Gamma_n}{2}\,,\quad \Gamma_n = 2\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}
@@ -406,7 +407,7 @@
 \begin{frame}
   \frametitle{1粒子系での例}
   \begin{equation*}
-    \varDelta E_n = -i\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}\quad\text{を得る理由}
+    \varDelta E_n = -i\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}\quad\text{を得る計算}
   \end{equation*}
   極を与えるエネルギーは$1+e^{iW_1(E)}=e^{-W_2(E)}$を満たしていた。\\
   また、$1+e^{iW_1(E_n^{~0})}=0$に注意すると
@@ -420,13 +421,13 @@
 
 \end{frame}
 
-\begin{frame}{1粒子系での例}
+\begin{frame}{1粒子系での例（まとめ）}
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
-        \item 単純なHF方程式で得られる基底状態$q_{\text{classical}}$は準安定状態
+        \item 古典的な基底状態$q_{\text{classical}}$は\\準安定状態
         \item 虚時間方向を考えることで、トンネル効果が考慮できる
-        \item $q_3$にトンネリングした後は$q$が増大する方向へ運動する
+        \item $q_3$にトンネリングした後は$q$が増大する方向へ時間発展
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -444,10 +445,10 @@
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
-        \item 原子核の四重極モーメント$Q$が大きいほど原子核が変形
+        \item 原子核の四重極モーメント$Q$は変形度を表す
         \item $Q$に対するHFエネルギーは$Q_1$で極小値（$\neq$最小値）
         \item \serifRoman{2}のポテンシャル障壁をトンネリングして\serifRoman{3}の領域へ時間発展
-        \item 波動関数はHF方程式によって求められる
+        \item EL方程式はHF方程式になっている
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -460,8 +461,8 @@
 \begin{frame}{\ce{^{8}Be -> ^{4}He + ^{4}He}の計算結果}
   \adjincludegraphics[width=1\linewidth,valign=t]{Be.png}
   \begin{itemize}
-    \item 原子核が変形し、最終的に2つの粒子に分かれている
-    \item Negeleの他の論文にも図は載っているが、詳細な評価は見つけられない
+    \item トンネリング後の状態は、2つの粒子に分かれた状態
+    \item Negeleの他の論文にも図は載っているが、定量的な評価は見つけられない
     \item 現在に至るまで、虚時間法の応用があまりされていない
     \item 卒研で1次元のHF計算を行い、虚時間法でトンネル現象を再現する予定
   \end{itemize}
@@ -472,7 +473,7 @@
     \item HF方程式を解くことでトンネリング解の状態を得ることができる
   \end{itemize}
   \begin{itemize}
-    \item 重い核（\ce{^{238}U}など）に適用するためには、計算コストや精度の問題がある
+    \item 重い核（\ce{^{238}U}など）に適用するためには計算コストや精度の問題があり、工夫が必要
 
           \begin{itemize}
             \item 波動関数が各粒子の座標$\bm{r}_1,\,\bm{r}_2,\,\dots,\,\bm{r}_N$に依存する

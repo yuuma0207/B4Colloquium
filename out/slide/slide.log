@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  5 JUL 2023 10:24
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  5 JUL 2023 11:52
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1307,25 +1307,29 @@ File: pot1.png Graphic file (type bmp)
 [10
 
 ]
+LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 372.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 9.6222pt on input line 372.
+LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
+(Font)              scaled to size 9.40002pt on input line 372.
+LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
+(Font)              scaled to size 6.73553pt on input line 372.
+LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
+(Font)              scaled to size 6.73553pt on input line 372.
+LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
+(Font)              scaled to size 6.58002pt on input line 372.
 File: tunneling_pot.png Graphic file (type bmp)
 <tunneling_pot.png>
 [11
 
 ]
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 388.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 388.
-LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 9.40002pt on input line 388.
-LaTeX Font Info:    Font shape `JT2/hgt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 388.
-LaTeX Font Info:    Font shape `JY2/hgt/m/n' will be
-(Font)              scaled to size 6.73553pt on input line 388.
-LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 6.58002pt on input line 388.
 File: pot2.png Graphic file (type bmp)
 <pot2.png>
+
+Overfull \vbox (1.31006pt too high) detected at line 389
+ []
+
 [12
 
 ] [13
@@ -1377,4 +1381,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  128i,20n,122p,460b,1063s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/slide/slide.dvi (19 pages, 92620 bytes).
+Output written on out/slide/slide.dvi (19 pages, 92964 bytes).
