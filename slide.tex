@@ -325,7 +325,7 @@
 \end{frame}
 
 \begin{frame}{エネルギー固有値を求める}
-  周期$T$の運動の経路$q(T)$で、$\delta S[q(T)]=0$を満たす$q_0(T)$について$W(T)=ET+S[q_0(T)]$とする。SPAを用いると
+  周期$T$の運動の経路$q(T)$で、$\delta S[q(T)]=0$を満たす$q_0(T)$について$W(T)=ET+S[q_0(T)]$とする。鞍点法を用いると
   \begin{align*}
             & \int_0^{\infty}dT\,e^{iET}\underbrace{\int dq\,\int\mathcal{D}q\,e^{iS[q]}}_{\approx Ae^{iS[q_0(T)]}}
     \approx\int_0^{\infty}dT\,Ae^{i\qty(ET + S[q_0(T)])}                                                                               \\
@@ -378,7 +378,7 @@
       \begin{itemize}
         \item $m\dv[2]{q_0}{\tau} = -\grad \qty[-V(q_0)]$
         \item 反転したポテンシャル内で$q_2\leq q\leq q_3$を運動しているように見える
-        \item 虚時間方向では$\delta S[q_0]=0$が成立しており、SPAでは考慮する必要がある
+        \item 虚時間方向では$\delta S[q_0]=0$が成立しており、鞍点法では考慮する必要がある
         \item $q_{\text{classical}}$は準安定状態であることが計算からわかる
       \end{itemize}
     \end{column}
