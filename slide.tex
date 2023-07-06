@@ -360,13 +360,13 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{1粒子系での例（図を上と同じのを使う）}
+\begin{frame}{1粒子系での例}
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
         \item 先ほどは$V(q)$の極小値まわりの周期運動のみを考えていた
         \item 量子力学の結果では、トンネル効果によってポテンシャル障壁を乗り越える
-        \item ポテンシャル極小値の位置$q_{\text{classical}}$は安定でない
+        \item トンネル効果を記述するためには虚時間法を用いる
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -375,7 +375,7 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{1粒子系での例（元のポテンシャルを点線表示、W1W2をかく）}
+\begin{frame}{1粒子系での例}
   $t$を純虚数として、$it\to\tau$という変換（Wick's rotation）を考えると\\
   トンネル効果が考慮できる（虚時間法）
   \begin{columns}[t]
@@ -384,7 +384,6 @@
         \item $m\dv[2]{q_0}{\tau} = -\grad \qty[-V(q_0)]$
         \item 反転したポテンシャル内で$q_2\leq q\leq q_3$を運動しているように見える
         \item 虚時間で$\delta S[q_0]=0$が成立しており、鞍点法では考慮する必要がある
-        \item $q_{\text{classical}}$は準安定状態であることが計算からわかる
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -395,7 +394,7 @@
 
 \begin{frame}{1粒子系での例}
   虚時間方向での周期運動を考慮して$\trace(E-\hat{H})^{-1}$の計算をする\\
-  $W_2(E)$は虚時間方向での$W(E)=ET+S[q_0(T)]$
+  $W_1(E)$は実時間、$W_2(E)$は虚時間方向での$W(E)=ET+S[q_0(T)]$\\
   \begin{equation*}
     \trace\frac{1}{E-\hat{H}+i\eta} \propto \frac{-3e^{iW_1}-e^{-W_2}}{1+e^{iW_1}+e^{-W_2}}
   \end{equation*}
