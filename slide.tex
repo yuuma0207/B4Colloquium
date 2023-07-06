@@ -74,8 +74,11 @@
         \usebeamerfont{institute}\insertinstitute \par
         \vspace{3em}
         \usebeamerfont{date}\insertdate\par
+      \end{flushright}
+      \vspace{-6em}
+      \begin{flushleft}
         \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
-    \end{flushright}
+      \end{flushleft}
 }
 
 % Algorithm系
@@ -190,6 +193,8 @@
 \author{\textbf{松本侑真}}
 \date{\today}
 \institute{原子核理論 関澤研究室}
+\titlegraphic{\includegraphics[scale=0.25]{fission_1.png}}
+%\titlegraphic{\adjincludegraphics[height=.5\linewidth,valign=t]{heikinba.png}}
 
 \begin{document}
 \maketitle
@@ -217,22 +222,21 @@
   J.W.Negele, Nuclear Mean-Field Theory, Physics Today 38, 24(1985)では
   \begin{itemize}
     \item 平均場理論＋経路積分でトンネル効果を記述する
-    \item 少数核子系の核分裂反応を数値計算で再現する
+    \item 少数核子系（\ce{^{8}Be}）の核分裂に応用する
   \end{itemize}
   ことが目的
 \end{frame}
 
 \begin{frame}{平均場理論}
   \begin{itemize}
-    \item 多体系における相互作用を平均化して一体問題のポテンシャルとして扱う手法
-    \item 原子核中では、平均ポテンシャルによって核子の配置が決定（集団運動模型）
+    \item 多体系における相互作用を平均化して一体の平均ポテンシャルとして扱う手法
     \item 原子核の平均ポテンシャルは、Hartree-Fock近似によって微視的に得られる
   \end{itemize}
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
         \item $V(r,t)$と核子の波動関数は\\自己無撞着性を持つ
-        \item $V(r,t)$の収束解が系の平衡状態と考えられる
+        \item 核分裂のような現象が自己無撞着な集団運動として記述できる
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -251,10 +255,9 @@
             \begin{itemize}
               \item 複数のスレーター行列式の線形結合で波動関数を表すことで、より正確な状態が得られることが知られている
             \end{itemize}
-      \item 重い原子核の核分裂反応を正しく記述できない
+      \item 核分裂反応のような多体のトンネル現象を記述できない
             \begin{itemize}
-              \item 核分裂していない状態と核分裂している状態の重ね合わせが記述できない
-              \item トンネル効果などの量子効果を正確に記述出来ていない
+              \item 平均場が1つしかなく、核分裂していない状態と核分裂している状態の重ね合わせが記述できない
             \end{itemize}
     \end{itemize}
   \end{block}
@@ -265,7 +268,7 @@
 \begin{frame}{平均場理論（TDHF）で核分裂反応を記述する}
   \begin{block}{経路積分を使う理由}
     \begin{itemize}
-      \item 多体系でのトンネル効果を含む量子論の現象を記述できる
+      \item 虚時間法により、多体のトンネル現象を記述できる
       \item 鞍点法（Stationary Phase Approximation：SPA）で近似ができる
     \end{itemize}
   \end{block}
@@ -329,8 +332,8 @@
   周期$T$の運動の経路$q(T)$で、$\delta S[q(T)]=0$を満たす$q_0(T)$について$W(T)=ET+S[q_0(T)]$とする。鞍点法を用いると
   \begin{align*}
             & \int_0^{\infty}dT\,e^{iET}\underbrace{\int dq\,\int\mathcal{D}q\,e^{iS[q]}}_{\approx Ae^{iS[q_0(T)]}}
-    \approx\int_0^{\infty}dT\,Ae^{i\qty(ET + S[q_0(T)])}                                                                               \\
-    \approx & A\sum_{m=1}^{\infty}f_m e^{iW(mT)} =A\sum_{m=1}^{\infty}e^{im\pi}\qty(e^{iW(T)})^m \propto \frac{e^{iW(T)}}{1+e^{iW(T)}}
+    \approx\int_0^{\infty}dT\,Ae^{i\qty(ET + S[q_0(T)])}                                                            \\
+    \approx & A\sum_{m=1}^{\infty}e^{im\pi}\qty(e^{iW(T)})^m \propto \frac{e^{iW(T)}}{1+e^{iW(T)}}
   \end{align*}
   \begin{itemize}
     \item $\delta S[q_0(T)]=0$であり、$q_0(T)$はEuler-Lagrange方程式を満たす
@@ -357,7 +360,7 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{1粒子系での例}
+\begin{frame}{1粒子系での例（図を上と同じのを使う）}
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
@@ -367,19 +370,20 @@
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
-      \adjincludegraphics[width=1\linewidth,valign=t]{tunneling_pot.png}
+      \adjincludegraphics[width=1\linewidth,valign=t]{tunneling_onaji.png}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{1粒子系での例}
-  $t$を準虚数として、$it\to\tau$という変換を考えるとトンネル効果が考慮できる
+\begin{frame}{1粒子系での例（元のポテンシャルを点線表示、W1W2をかく）}
+  $t$を純虚数として、$it\to\tau$という変換（Wick's rotation）を考えると\\
+  トンネル効果が考慮できる（虚時間法）
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
         \item $m\dv[2]{q_0}{\tau} = -\grad \qty[-V(q_0)]$
         \item 反転したポテンシャル内で$q_2\leq q\leq q_3$を運動しているように見える
-        \item 虚時間方向では$\delta S[q_0]=0$が成立しており、鞍点法では考慮する必要がある
+        \item 虚時間で$\delta S[q_0]=0$が成立しており、鞍点法では考慮する必要がある
         \item $q_{\text{classical}}$は準安定状態であることが計算からわかる
       \end{itemize}
     \end{column}
@@ -427,7 +431,7 @@
     \begin{column}{.5\textwidth}
       \begin{itemize}
         \item 古典的な基底状態$q_{\text{classical}}$は\\準安定状態
-        \item 虚時間方向を考えることで、トンネル効果が考慮できる
+        \item 虚時間に経路積分を適用するとトンネル効果が記述できる
         \item $q_3$にトンネリングした後は$q$が増大する方向へ時間発展
       \end{itemize}
     \end{column}
@@ -459,35 +463,32 @@
 \end{frame}
 
 
-\begin{frame}{\ce{^{8}Be -> ^{4}He + ^{4}He}の計算結果}
+\begin{frame}{\ce{^{8}Be -> ^{4}He + ^{4}He}の計算結果（基底状態、分裂後とか＋矢印の追加）}
   \adjincludegraphics[width=1\linewidth,valign=t]{Be.png}
   \begin{itemize}
     \item トンネリング後の状態は、2つの粒子に分かれた状態
+    \item 本論文では、具体的な議論がなされていない
     \item Negeleの他の論文にも図は載っているが、定量的な評価は見つけられない
     \item 現在に至るまで、虚時間法の応用があまりされていない
-    \item 卒研で1次元のHF計算を行い、虚時間法でトンネル現象を再現する予定
-    \item Be8は緩く結合している系の説明
   \end{itemize}
 \end{frame}
-\begin{frame}{まとめ}
+\begin{frame}{まとめと今後の展望}
   \begin{itemize}
     \item 平均場理論＋経路積分でトンネル効果を記述できる
-    \item HF方程式を解くことでトンネリング解の状態を得ることができる
-  \end{itemize}
-  \begin{itemize}
+    \item 1粒子系での例では、WKB近似の結果を再現できた
     \item 重い核（\ce{^{238}U}など）に適用するためには計算コストや精度の問題があり、工夫が必要
-
           \begin{itemize}
             \item 波動関数が各粒子の座標$\bm{r}_1,\,\bm{r}_2,\,\dots,\,\bm{r}_N$に依存する
             \item 多次元のポテンシャル面による透過問題（1次元ではない）
             \item 精度を上げるためには空間、時間のメッシュ数を多くする必要がある
             \item 現在のコンピュータでは計算可能
           \end{itemize}
+    \item 卒研で1次元のHF計算を行い、虚時間法でトンネル現象の記述を試みる
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}{Appendix：経路積分の数式表現}
+\begin{frame}[noframenumbering]{Appendix：経路積分の数式表現}
   \begin{itemize}
     \item 時間発展演算子$U(t,t_0)=e^{-i\hat{H}(t-t_0)/\hbar}$
     \item 始状態を$\ket{\psi_i}$とすると、終状態は$\ket{\psi_f}=U(t,t_0)\ket{\psi_i}$
@@ -508,14 +509,13 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Appendixにいれたいもの}
+\begin{frame}[noframenumbering]{Appendixにいれたいもの}
   \begin{itemize}
     \item 経路積分の途中計算
     \item 2次元のポテンシャル面が虚時間上で極小値に落ちていく図をのせる
     \item $\trace$の計算過程
     \item $\alpha$崩壊の理論やWKB近似の理論についての説明
-    \item HF方程式を載せる
+    \item HF方程式を載せる（一般のハミルトニアン書いて、自己む到着になることの説明）
     \item スレーター行列式とは
   \end{itemize}
 \end{frame}
