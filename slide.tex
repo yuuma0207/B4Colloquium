@@ -518,14 +518,14 @@
     \item 構成粒子がFermi粒子の場合、全体系の波動関数$\ket{\Psi}_{\text{A}}$は任意の2つの粒子の入れ替えに対して反対称になるという要請から、$N$次置換群を$\mathfrak{S}_{N}$として、
           \begin{equation*}
             \ket{\Psi}_{\text{A}}=\frac{1}{\sqrt{N!}}\sum_{\sigma\in\mathfrak{S}_N}
-            \sgn(\sigma)\ket{\phi_{\sigma(1)}}\!\ket{\phi_{\sigma(2)}}\cdots\ket{\phi_{\sigma(N)}}
+            \sgn(\sigma)\ket{\phi_{\sigma(1)}}^{(1)}\ket{\phi_{\sigma(2)}}^{(2)}\cdots\ket{\phi_{\sigma(N)}}^{(N)}
           \end{equation*}
           と表される。これは、行列式を用いて表現することができる：
           \begin{equation*}
             \ket{\Psi}_{\text{A}}=\frac{1}{\sqrt{N!}}\det
             \begin{bmatrix}
-              \ket{\phi_{1}}^{(0)} & \ket{\phi_2}^{(0)} & \cdots & \ket{\phi_N}^{(0)} \\
               \ket{\phi_{1}}^{(1)} & \ket{\phi_2}^{(1)} & \cdots & \ket{\phi_N}^{(1)} \\
+              \ket{\phi_{1}}^{(2)} & \ket{\phi_2}^{(2)} & \cdots & \ket{\phi_N}^{(2)} \\
               \vdots               & \vdots             &        & \vdots             \\
               \ket{\phi_{1}}^{(N)} & \ket{\phi_2}^{(N)} & \cdots & \ket{\phi_N}^{(N)}
             \end{bmatrix}
