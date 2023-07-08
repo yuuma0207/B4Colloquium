@@ -1,6 +1,7 @@
 \RequirePackage{plautopatch}
 \documentclass[14pt,aspectratio=169,xcolor=dvipsnames,table,dvipdfmx]{beamer}
 \usepackage{bxdpx-beamer} % dvipdfmxなので必要
+\usepackage{appendixnumberbeamer}
 
 %Beamerの設定
 \usetheme{Boadilla}
@@ -19,6 +20,7 @@
 \usepackage{physics,bm}
 \usepackage{mhchem}
 \usepackage{amsmath,amsfonts,amssymb,mathtools,amsthm}
+\DeclareMathOperator{\sgn}{sgn}
 \renewcommand{\familydefault}{\sfdefault}  % 英文をサンセリフ体に
 \renewcommand{\kanjifamilydefault}{\gtdefault}  % 日本語をゴシック体に
 \usefonttheme{structurebold} % タイトル部を太字
@@ -251,9 +253,9 @@
   \end{itemize}
   \begin{block}{TDHFの問題点}
     \begin{itemize}
-      \item 多体波動関数が1つのスレーター行列式で表されるという近似を用いている
+      \item 多体波動関数が1つのSlater行列式で表されるという近似を用いている
             \begin{itemize}
-              \item 複数のスレーター行列式の線形結合で波動関数を表すことで、より正確な状態が得られることが知られている
+              \item 複数のSlater行列式の線形結合で波動関数を表すことで、より正確な状態が得られることが知られている
             \end{itemize}
       \item 核分裂反応のような多体のトンネル現象を記述できない
             \begin{itemize}
@@ -429,18 +431,18 @@
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
-        \item 古典的な基底状態$q_{\text{classical}}$は\\準安定状態
+        \item 古典的な基底状態は準安定状態
         \item 虚時間に経路積分を適用するとトンネル効果が記述できる
         \item $q_3$にトンネリングした後は$q$が増大する方向へ時間発展
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
-      \adjincludegraphics[width=1\linewidth,valign=t]{tunneling_pot.png}
+      \adjincludegraphics[width=1\linewidth,valign=t]{junantei.png}
     \end{column}
   \end{columns}
-  時刻$t$で$q_{\text{classical}}$の状態にいる確率$P(t)$は、$E=E_n^{~0}-i\Gamma_n/2$より
+  時刻$t$の状態$\ket{\psi(t)}$が準安定状態$\ket{q}$で観測される確率$P(t)$は、$E=E_n^{~0}-i\Gamma_n/2$より
   \begin{equation*}
-    P(t) = \abs{\braket{q_{\text{classical}}}{\psi(t)}}^2 = \abs{\bra{q_{\text{classical}}}e^{-iEt/\hbar}\ket{q_{\text{classical}}}}^2 = e^{-\Gamma_nt/\hbar}
+    P(t) = \abs{\braket{q}{\psi(t)}}^2 = \abs{\bra{q}e^{-iEt/\hbar}\ket{q}}^2 = e^{-\Gamma_nt/\hbar}
   \end{equation*}
 \end{frame}
 
@@ -486,8 +488,8 @@
   \end{itemize}
 \end{frame}
 
-
-\begin{frame}[noframenumbering]{Appendix：経路積分の数式表現}
+\appendix
+\begin{frame}{Appendix：経路積分の数式表現}
   \begin{itemize}
     \item 時間発展演算子$U(t,t_0)=e^{-i\hat{H}(t-t_0)/\hbar}$
     \item 始状態を$\ket{\psi_i}$とすると、終状態は$\ket{\psi_f}=U(t,t_0)\ket{\psi_i}$
@@ -508,15 +510,98 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Appendixにいれたいもの}
+\begin{frame}
+  \frametitle{Appendix：Slater行列式について}
+  \small
   \begin{itemize}
-    \item 経路積分の途中計算
-    \item 2次元のポテンシャル面が虚時間上で極小値に落ちていく図をのせる
-    \item $\trace$の計算過程
-    \item $\alpha$崩壊の理論やWKB近似の理論についての説明
-    \item HF方程式を載せる（一般のハミルトニアン書いて、自己む到着になることの説明）
-    \item スレーター行列式とは
+    \item 同一の$N$個($N\geq 2$)の粒子からなる全体系の波動関数は、$i$番目の粒子の状態$\ket{\phi_i}$を用いて$\ket{\phi_1}\!\ket{\phi_2}\cdots\ket{\phi_N}$と表される。
+    \item 構成粒子がFermi粒子の場合、全体系の波動関数$\ket{\Psi}_{\text{A}}$は任意の2つの粒子の入れ替えに対して反対称になるという要請から、$N$次置換群を$\mathfrak{S}_{N}$として、
+          \begin{equation*}
+            \ket{\Psi}_{\text{A}}=\frac{1}{\sqrt{N!}}\sum_{\sigma\in\mathfrak{S}_N}
+            \sgn(\sigma)\ket{\phi_{\sigma(1)}}\!\ket{\phi_{\sigma(2)}}\cdots\ket{\phi_{\sigma(N)}}
+          \end{equation*}
+          と表される。これは、行列式を用いて表現することができる：
+          \begin{equation*}
+            \ket{\Psi}_{\text{A}}=\frac{1}{\sqrt{N!}}\det
+            \begin{bmatrix}
+              \ket{\phi_{1}}^{(0)} & \ket{\phi_2}^{(0)} & \cdots & \ket{\phi_N}^{(0)} \\
+              \ket{\phi_{1}}^{(1)} & \ket{\phi_2}^{(1)} & \cdots & \ket{\phi_N}^{(1)} \\
+              \vdots               & \vdots             &        & \vdots             \\
+              \ket{\phi_{1}}^{(N)} & \ket{\phi_2}^{(N)} & \cdots & \ket{\phi_N}^{(N)}
+            \end{bmatrix}
+          \end{equation*}
   \end{itemize}
+  この行列式をSlater行列式と呼ぶ。
 \end{frame}
+
+\begin{frame}
+  \small
+  \frametitle{Appendix：Hartree-Fock変分問題}
+  \begin{block}{エネルギー変分問題}
+    $N$体Fermi粒子系$X$のHilbert空間$\mathcal{H}_{\text{A}}^{(N)}$の任意の規格化された状態$\ket{\Psi}\in\mathcal{H}_{\text{A}}^{(N)}$
+    に対して、エネルギー汎関数$E[\ket{\Psi}]$を系$X$のHamilton演算子$\hat{H}$の期待値として定義する：
+    \begin{equation*}
+      E[\ket{\Psi}]\coloneqq \ev{\hat{H}}{\Psi}\quad\qty(\ket{\Psi}\in\mathcal{H}_{\text{A}}^{(N)},\,\braket{\Psi}=1)
+    \end{equation*}
+    規格化された状態$\ket{\Psi}$を$\mathcal{H}_{\text{A}}^{(N)}$全体で動かして、エネルギー汎関数$E[\ket{\Psi}]$が$\ket{\Psi}=\ket{\Psi_*}$で
+    最小値を取ったならば、$\ket{\Psi_*}=\ket{\Psi_{\text{g}}},\,E[\ket{\Psi_*}]=E_{\text{g}}$が成立する。\\
+    （系の厳密な基底状態を$\ket{\Psi_{\text{g}}}$、基底エネルギーを$E_{\text{g}}$とした。）
+  \end{block}
+  \begin{exampleblock}{HF変分問題}
+    変分に用いる状態$\ket{\Psi}$を、互いに直交している規格化された$N$個の1粒子状態$\ket{\phi_1},\ket{\phi_2},\ldots,\ket{\phi_{N}}\in\mathcal{H}_{\text{single}}$を用いた1つのSlater行列式
+    $\ket{\Psi}_{\text{A}}$に制限したエネルギー変分問題がHF変分問題であり、$\ket{\Psi_*}=\ket{\Psi^{\text{HF}}}$をHF状態と呼ぶ。
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Appendix：Hartree-Fock方程式}
+  \small
+  Lagrangeの未定乗数$\lambda_{ij}\in\mathbb{C}\;(i\leq i,j\leq N)$を導入して書き換えたHF変分問題
+  \begin{equation*}
+    \fdv{\ket{\Psi}}\qty[\ev{\hat{H}}{\Psi}-\sum_{i=1}^N\sum_{j=1}^{N}\lambda_{ij}(\braket{\phi_i}{\phi_j}-\delta_{ij})]=0
+  \end{equation*}
+  を満たす解$\ket{\Psi^{\text{HF}}}$がHF方程式で与えられる。変分計算により、以下のHF方程式を得る：
+  \begin{equation*}
+    \int d\bm{r}'\,\hat{h}_{\text{HF}}(\bm{r},\bm{r}')\phi_i(\bm{r}')  = \varepsilon_i\phi_i(\bm{r})
+  \end{equation*}
+  $\hat{h}_{\text{HF}}\in\mathcal{H}_{\text{single}}$はFock演算子と呼ばれる。\\
+  Fock演算子は、運動項$\hat{t}(\bm{r})$、Hartree項$\hat{\Gamma}_{\text{H}}(\bm{r})$、Fock項$\hat{\Gamma}_{\text{F}}(\bm{r},\bm{r}')$を用いて
+  \begin{equation*}
+    \hat{h}_{\text{HF}}(\bm{r,\bm{r}'})\coloneqq \qty[\hat{t}(\bm{r'})+\hat{\Gamma}_{\text{H}}(\bm{r}')]\delta(\bm{r}-\bm{r}')-\hat{\Gamma}_{\text{F}}(\bm{r},\bm{r}')
+  \end{equation*}
+  と定義される。
+\end{frame}
+
+\begin{frame}
+  \frametitle{Appendix：Hartree-Fock方程式}
+  \small
+  運動項$\hat{t}(\bm{r})$、Hartree項$\hat{\Gamma}_{\text{H}}(\bm{r})$、Fock項$\hat{\Gamma}_{\text{F}}(\bm{r},\bm{r}')$は、
+  HF方程式の解$\phi_i(\bm{r})\;(1\leq i\leq N)$に依存する：
+  \begin{gather*}
+    \hat{\Gamma}_{\text{H}}(\bm{r})\coloneqq \int d\bm{r}'\,\hat{v}(\bm{r},\bm{r}')\rho(\bm{r}'),\quad\hat{\Gamma}_{\text{F}}(\bm{r},\bm{r}')\coloneqq \hat{v}(\bm{r},\bm{r}')\rho(\bm{r},\bm{r}')      \\
+    \rho(\bm{r}) \coloneqq \sum_{i=1}^{N}\abs{\phi_i(\bm{r})}^2 ,\quad\rho(\bm{r},\bm{r}')\coloneqq \sum_{i=1}^{N}\phi_i(\bm{r})\phi_i^{*}(\bm{r}')
+  \end{gather*}
+  したがって、
+  \begin{enumerate}
+    \item 初期波動関数$\phi^{~0}_i(\bm{r})\;(1\leq i\leq N)$を与えて$\hat{h}^{0}_{\text{HF}}$を計算し、HF方程式を解く。
+    \item HF方程式の解$\phi^{~1}_i(\bm{r})\;(1\leq i\leq N)$から$\hat{h}^{1}_{\text{HF}}$を計算し、HF方程式を更新する。
+    \item 解が収束するまで更新を繰り返し、所望の精度で収束したときの解$\phi_i(\bm{r})\;(1\leq i\leq N)$を用いたSlater行列式がHF状態$\ket{\Psi^{\text{HF}}}$となる。
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Appendix：鞍点法を用いたトレースの計算過程}
+  \footnotesize
+  \begin{align*}
+    \trace{\frac{1}{E-\hat{H}+i\eta}} & \propto \sum_{klm}\underbrace{f_{klm}}_{=(-1)^{k+l+m}}e^{ikW_1(T)-lW_2(T)+imW_3(T)}                                                                           \\
+                                      & = \quad\; \sum_{k=1}^{\infty}\qty{-e^{iW_1}\sum_{l=0}^{\infty}\qty[-e^{-W_2}\sum_{m=0}^{\infty}(-e^{iW_3})^m]^l}^k                                            \\
+                                      & \quad\; + \sum_{l=1}^{\infty}\qty{-e^{-W_2}\sum_{m=0}^{\infty}\qty[-e^{iW_3}\sum_{k=0}^{\infty}(-e^{iW_1})^k]^m}^l                                            \\
+                                      & \quad\; + \sum_{m=1}^{\infty}\qty{-e^{iW_3}\sum_{k=0}^{\infty}\qty[-e^{iW_1}\sum_{k=0}^{\infty}(-e^{-W_2})^l]^k}^m                                            \\
+                                      & = \frac{-2e^{i(W_1+W_3)}-e^{iW_1}-e^{-W_2}-e^{iW_3}}{(1+e^{iW_1})(1+e^{iW_3})+e^{-W_2}}\xrightarrow[W_3\to0]{}\frac{-3e^{iW_1}-e^{-W_2}}{1+e^{iW_1}+e^{-W_2}}
+  \end{align*}
+\end{frame}
+
+
+
 
 \end{document}
