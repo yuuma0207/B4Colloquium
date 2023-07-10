@@ -299,7 +299,7 @@
   \begin{align*}
     K(q_f,q_i\,;t_f,t_i) & = \int\mathcal{D}q
     \exp\qty[\frac{i}{\hbar}\int_{t_i}^{t_f}dt\,\qty(\frac{m}{2}\dot{q}^2 - V(q))]                                                            \\
-                         & = \underset{\text{\textbf{経路積分}}}{\underline{\int\mathcal{D}q\exp\qty[\frac{i}{\hbar}S[q]]}}\quad \qty(\int \mathcal{D}q \coloneqq \prod_{j=1}^{N-1} \int dq_j)
+                         & = \underset{\color{AlertOrange}{\text{\textbf{経路積分}}}}{\underline{\int\mathcal{D}q\exp\qty[\frac{i}{\hbar}S[q]]}}\quad \qty(\int \mathcal{D}q \coloneqq \prod_{j=1}^{N-1} \int dq_j)
   \end{align*}
   \vspace{-1em}
   \begin{block}{経路積分の解釈}
@@ -319,7 +319,7 @@
           \end{itemize}
           \begin{align*}
             \trace\frac{1}{E-\hat{H}+i\eta} & =-i\int_0^{\infty}dT\,e^{iET}\int dq\,\bra{q}e^{-i\hat{H}T}\ket{q} \\
-                                            & = -i\int_0^{\infty}dT\,e^{iET}\int dq\,\underset{\text{\textbf{経路積分}}}{\underline{\int\mathcal{D}q\,e^{iS[q]}}}
+                                            & = -i\underset{\text{$T$：周期}}{\underline{\int_0^{\infty}dT\,e^{iET}}}\int dq\,\underset{\color{AlertOrange}{\text{\textbf{経路積分}}}}{\underline{\int\mathcal{D}q\,e^{iS[q]}}}
           \end{align*}
           \begin{itemize}
             \item $q(0)=q(T)$の境界条件（周期運動）を満たした経路積分
@@ -340,7 +340,7 @@
     \approx & A\sum_{m=1}^{\infty}e^{im\pi}\qty(e^{iW(T)})^m \propto \frac{e^{iW(T)}}{1+e^{iW(T)}}
   \end{align*}
   \begin{itemize}
-    \item $\delta S[q_0(T)]=0$であり、$q_0(T)$は{\color{AlertOrange}Euler-Lagrange方程式}を満たす
+    \item $\delta S[q_0(T)]=0$であり、$q_0(T)$は\textbf{Euler-Lagrange方程式}を満たす
     \item 基本周期$T$に対して、$W(mT)=mW(T)$を満たしている
     \item 周期$T$が{\color{AlertOrange}極を与える条件}$1+e^{iW(T)}=0\Leftrightarrow W(T)=(2n+1)\pi$はBohr-Sommerfeldの量子化条件に対応
   \end{itemize}
@@ -399,7 +399,7 @@
 \begin{frame}{1粒子系での例}
   
   {\color{AlertOrange}虚時間方向での周期運動}を考慮して$\trace(E-\hat{H})^{-1}$の計算をする\\
-  $W_1(E)$は実時間、$W_2(E)$は虚時間方向での$W(E)=ET+S[q_0(T)]$\\
+  $W_1(E)$は実時間、$W_2(E)$は虚時間方向での$W(E)=ET+S[q_0(T)]$
   \begin{equation*}
     \trace\frac{1}{E-\hat{H}+i\eta} \propto \frac{-3e^{iW_1}-e^{-W_2}}{1+e^{iW_1}+e^{-W_2}}
   \end{equation*}
@@ -407,8 +407,9 @@
     \item $1+e^{iW_1(E)}=-e^{-W_2(E)}$が極となる（先ほどは$1+e^{iW_1(E_n^{~0})}=0$）
     \item $E=E_{n}^{~0}+\varDelta E_n$として、補正項$\varDelta E_n$を求めると
           \begin{equation*}
-            E = E_{n}^{~0} -\frac{i\Gamma_n}{2}\,,\quad \Gamma_n = 2\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}
+            E = E_{n}^{~0} +\underset{\color{AlertOrange}{\text{補正項}\varDelta E_n}}{\underline{\qty(-\frac{i\Gamma_n}{2})}}\,,\quad \Gamma_n = 2\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}
           \end{equation*}
+    \vspace{-.8em}
     \item $\Gamma_n$は\textbf{寿命の逆数}であり、準安定状態がトンネル効果で崩壊するWKB近似の式として知られている
   \end{itemize}
 \end{frame}
@@ -422,7 +423,7 @@
   また、$1+e^{iW_1(E_n^{~0})}=0$に注意すると
   \begin{align*}
      & 1+e^{iW_1(E_n^{~0}+\varDelta E_n)}=-e^{-W_2(E_n^{~0}+\varDelta E_n)}                                          \\
-     & 1+\underbrace{e^{iW_1(E_n^{~0})}}_{=-1}\underset{\text{1次のTaylor展開で近似}}{\underline{\qty(1+i\pdv{W_1(E_n^{~0})}{E}\varDelta E_n)}} = -e^{-W_2(E_n^{~0})}     \\
+     & 1+\underbrace{e^{iW_1(E_n^{~0})}}_{=-1}\underset{{\color{AlertOrange}\text{1次のTaylor展開で近似}}}{\underline{\qty(1+i\pdv{W_1(E_n^{~0})}{E}\varDelta E_n)}} = -e^{-W_2(E_n^{~0})}     \\
      \therefore \;\;& \varDelta E_n = -i\frac{1}{T(E_n^{~0})}e^{-W_2(E_n^{~0})} = -i\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}
   \end{align*}
 
@@ -435,7 +436,7 @@
     \begin{column}{.5\textwidth}
       \begin{itemize}
         \item 古典的な基底状態は\textbf{準安定状態}
-        \item 虚時間に経路積分を適用するとトンネル効果が記述できる
+        \item 虚時間に経路積分を適用すると{\color{AlertOrange}トンネル効果が記述できる}
         \item $q_3$にトンネリングした後は$q$が増大する方向へ実時間発展
       \end{itemize}
     \end{column}
@@ -504,7 +505,7 @@
     \item 時間発展演算子$U(t,t_0)=e^{-i\hat{H}(t-t_0)/\hbar}$
     \item 始状態を$\ket{\psi_i}$とすると、終状態は$\ket{\psi_f}=U(t,t_0)\ket{\psi_i}$
           \begin{equation*}
-            \psi_f(q) = \int dq'\,\bra{q}U(t,t_0)\ket{q'}\bra{q'}\ket{\psi_i}
+            \psi_f(q) = \int dq'\,\bra{q}U(t,t_0)\underset{\color{AlertOrange}\text{完全系}}{\underline{\ket{q'}\!\bra{q'}}}\ket{\psi_i}
             = \int dq'\,K(q,q'\,;t,t_0)\psi_i(q')
           \end{equation*}
     \item ファインマン核$K(q_f,q_i\,;t_f,t_i)$の具体形
@@ -568,7 +569,7 @@
   \small
   Lagrangeの未定乗数$\lambda_{ij}\in\mathbb{C}\;(i\leq i,j\leq N)$を導入して書き換えたHF変分問題
   \begin{equation*}
-    \fdv{\ket{\Psi}}\qty[\ev{\hat{H}}{\Psi}-\sum_{i=1}^N\sum_{j=1}^{N}\underset{\text{拘束条件}}{\underline{\lambda_{ij}(\braket{\phi_i}{\phi_j}-\delta_{ij})}}]=0
+    \fdv{\ket{\Psi}}\qty[\ev{\hat{H}}{\Psi}-\sum_{i=1}^N\sum_{j=1}^{N}\underset{\color{AlertOrange}\text{拘束条件}}{\underline{\lambda_{ij}(\braket{\phi_i}{\phi_j}-\delta_{ij})}}]=0
   \end{equation*}
   を満たす解$\ket{\Psi^{\text{HF}}}$がHF方程式で与えられる。変分計算により、以下のHF方程式を得る：
   \begin{equation*}
