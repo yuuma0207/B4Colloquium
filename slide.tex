@@ -299,8 +299,9 @@
   \begin{align*}
     K(q_f,q_i\,;t_f,t_i) & = \int\mathcal{D}q
     \exp\qty[\frac{i}{\hbar}\int_{t_i}^{t_f}dt\,\qty(\frac{m}{2}\dot{q}^2 - V(q))]                                                            \\
-                         & = \int\mathcal{D}q\exp\qty[\frac{i}{\hbar}S[q]]\quad \qty(\int \mathcal{D}q \coloneqq \prod_{j=1}^{N-1} \int dq_j)
+                         & = \underset{\text{\textbf{経路積分}}}{\underline{\int\mathcal{D}q\exp\qty[\frac{i}{\hbar}S[q]]}}\quad \qty(\int \mathcal{D}q \coloneqq \prod_{j=1}^{N-1} \int dq_j)
   \end{align*}
+  \vspace{-1em}
   \begin{block}{経路積分の解釈}
     $(q_i,t_i)\to(q_1,t_1)\to\cdots\to(q_{N-1},t_{N-1})\to(q_f,t_f)$
     を経たときの遷移確率振幅を考えて、中間状態に関して全ての経路の和を取ると、\\
@@ -332,7 +333,7 @@
 \end{frame}
 
 \begin{frame}{エネルギー固有値を求める}
-  周期$T$の運動の経路$q(T)$で、$\delta S[q(T)]=0$を満たす$q_0(T)$について$W(T)=ET+S[q_0(T)]$とする。鞍点法を用いると
+  周期$T$の運動の経路$q(T)$で、$\delta S[q(T)]=0$を満たす$q_0(T)$について$W(T)=ET+S[q_0(T)]$とする。\textbf{鞍点法}を用いると
   \begin{align*}
             & \int_0^{\infty}dT\,e^{iET}\underbrace{\int dq\,\int\mathcal{D}q\,e^{iS[q]}}_{\approx Ae^{iS[q_0(T)]}}
     \approx\int_0^{\infty}dT\,Ae^{i\qty(ET + S[q_0(T)])}                                                            \\
@@ -396,13 +397,14 @@
 \end{frame}
 
 \begin{frame}{1粒子系での例}
-  虚時間方向での周期運動を考慮して$\trace(E-\hat{H})^{-1}$の計算をする\\
+  
+  {\color{AlertOrange}虚時間方向での周期運動}を考慮して$\trace(E-\hat{H})^{-1}$の計算をする\\
   $W_1(E)$は実時間、$W_2(E)$は虚時間方向での$W(E)=ET+S[q_0(T)]$\\
   \begin{equation*}
     \trace\frac{1}{E-\hat{H}+i\eta} \propto \frac{-3e^{iW_1}-e^{-W_2}}{1+e^{iW_1}+e^{-W_2}}
   \end{equation*}
   \begin{itemize}
-    \item {\color{AlertOrange}$1+e^{iW_1(E)}=-e^{-W_2(E)}$}が極となる（先ほどは$1+e^{iW_1(E_n^{~0})}=0$）
+    \item $1+e^{iW_1(E)}=-e^{-W_2(E)}$が極となる（先ほどは$1+e^{iW_1(E_n^{~0})}=0$）
     \item $E=E_{n}^{~0}+\varDelta E_n$として、補正項$\varDelta E_n$を求めると
           \begin{equation*}
             E = E_{n}^{~0} -\frac{i\Gamma_n}{2}\,,\quad \Gamma_n = 2\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}
@@ -420,8 +422,8 @@
   また、$1+e^{iW_1(E_n^{~0})}=0$に注意すると
   \begin{align*}
      & 1+e^{iW_1(E_n^{~0}+\varDelta E_n)}=-e^{-W_2(E_n^{~0}+\varDelta E_n)}                                          \\
-     & 1+\underbrace{e^{iW_1(E_n^{~0})}}_{=-1}\qty(1+i\pdv{W_1(E_n^{~0})}{E}\varDelta E_n) = -e^{-W_2(E_n^{~0})}     \\
-     & \varDelta E_n = -i\frac{1}{T(E_n^{~0})}e^{-W_2(E_n^{~0})} = -i\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}
+     & 1+\underbrace{e^{iW_1(E_n^{~0})}}_{=-1}\underset{\text{1次のTaylor展開で近似}}{\underline{\qty(1+i\pdv{W_1(E_n^{~0})}{E}\varDelta E_n)}} = -e^{-W_2(E_n^{~0})}     \\
+     \therefore \;\;& \varDelta E_n = -i\frac{1}{T(E_n^{~0})}e^{-W_2(E_n^{~0})} = -i\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}
   \end{align*}
 
 
@@ -475,7 +477,7 @@
 \begin{frame}{\ce{^{8}Be -> ^{4}He + ^{4}He}の計算結果}
   \adjincludegraphics[width=1\linewidth,valign=t]{Be.png}
   \begin{itemize}
-    \item トンネリング後の状態は、2つの粒子に分かれた状態
+    \item トンネリング後の状態は、{\color{AlertOrange}2つの粒子に分裂した状態}
     \item 本論文では、具体的な議論がなされていない
     \item Negeleの他の論文にも図は載っているが、定量的な評価は見つけられない
     \item 現在に至るまで、虚時間法の応用があまりされていない
@@ -566,7 +568,7 @@
   \small
   Lagrangeの未定乗数$\lambda_{ij}\in\mathbb{C}\;(i\leq i,j\leq N)$を導入して書き換えたHF変分問題
   \begin{equation*}
-    \fdv{\ket{\Psi}}\qty[\ev{\hat{H}}{\Psi}-\sum_{i=1}^N\sum_{j=1}^{N}\lambda_{ij}(\braket{\phi_i}{\phi_j}-\delta_{ij})]=0
+    \fdv{\ket{\Psi}}\qty[\ev{\hat{H}}{\Psi}-\sum_{i=1}^N\sum_{j=1}^{N}\underset{\text{拘束条件}}{\underline{\lambda_{ij}(\braket{\phi_i}{\phi_j}-\delta_{ij})}}]=0
   \end{equation*}
   を満たす解$\ket{\Psi^{\text{HF}}}$がHF方程式で与えられる。変分計算により、以下のHF方程式を得る：
   \begin{equation*}

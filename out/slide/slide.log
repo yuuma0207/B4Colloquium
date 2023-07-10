@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  10 JUL 2023 10:36
+This is e-upTeX, Version 3.141592653-p4.0.0-u1.28-220214-2.6 (utf8.uptex) (TeX Live 2022) (preloaded format=uplatex 2022.11.21)  10 JUL 2023 10:53
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1296,24 +1296,24 @@ File: keiro.png Graphic file (type bmp)
 [6
 
 ]
-Overfull \vbox (11.81136pt too high) detected at line 309
+Overfull \vbox (8.70665pt too high) detected at line 310
  []
 
 [7
 
 ]
 LaTeX Font Info:    Font shape `JT2/hgt/bx/n' will be
-(Font)              scaled to size 7.69775pt on input line 332.
+(Font)              scaled to size 7.69775pt on input line 333.
 LaTeX Font Info:    Font shape `JY2/hgt/bx/n' will be
-(Font)              scaled to size 7.69775pt on input line 332.
+(Font)              scaled to size 7.69775pt on input line 333.
 LaTeX Font Info:    Font shape `T1/qhv/bx/n' in size <8> not available
-(Font)              Font shape `T1/qhv/b/n' tried instead on input line 332.
+(Font)              Font shape `T1/qhv/b/n' tried instead on input line 333.
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 7.52002pt on input line 332.
+(Font)              scaled to size 7.52002pt on input line 333.
 [8
 
 ]
-Overfull \vbox (10.6123pt too high) detected at line 346
+Overfull \vbox (10.6123pt too high) detected at line 347
  []
 
 [9
@@ -1335,13 +1335,17 @@ File: pot2.png Graphic file (type bmp)
 
 ] [13
 
-] [14
+]
+Overfull \vbox (2.2681pt too high) detected at line 431
+ []
+
+[14
 
 ]
 File: junantei.png Graphic file (type bmp)
 <junantei.png>
 
-Overfull \vbox (5.7959pt too high) detected at line 455
+Overfull \vbox (5.7959pt too high) detected at line 457
  []
 
 [15
@@ -1361,23 +1365,23 @@ File: Be.png Graphic file (type bmp)
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 499.
+(hyperref)                removing `\translate ' on input line 501.
 
 [19
 
 ]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 543
+LaTeX Font Info:    Trying to load font information for U+euf on input line 545
 .
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-Overfull \vbox (5.88478pt too high) detected at line 543
+Overfull \vbox (5.88478pt too high) detected at line 545
  []
 
 [20
 
 ]
-Overfull \vbox (9.94704pt too high) detected at line 562
+Overfull \vbox (9.94704pt too high) detected at line 564
  []
 
 [21
@@ -1414,4 +1418,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  128i,20n,122p,460b,1067s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/slide/slide.dvi (24 pages, 122040 bytes).
+Output written on out/slide/slide.dvi (24 pages, 122420 bytes).
