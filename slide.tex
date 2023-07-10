@@ -209,7 +209,7 @@
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
-        \item トンネル効果によって生じる現象が存在する
+        \item {\color{AlertOrange}トンネル効果}によって生じる現象が存在する
         \item 1次元模型では、ガモフによる$\alpha$崩壊の理論やWKB近似などがある
         \item 実際の核分裂は多粒子系のトンネル現象かつ複雑な形状の自由度があり、微視的な計算が困難
       \end{itemize}
@@ -238,7 +238,7 @@
     \begin{column}{.5\textwidth}
       \begin{itemize}
         \item $V(r,t)$と核子の波動関数は\\自己無撞着性を持つ
-        \item 原子核の振動・回転・変形等の励起を、核子の自己無撞着な集団運動として記述できる
+        \item 原子核の振動・回転・変形等の励起を、{\color{AlertOrange}核子の自己無撞着な集団運動}として記述できる
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -257,7 +257,7 @@
             \begin{itemize}
               \item 複数のSlater行列式の線形結合で波動関数を表すことで、より正確な状態が得られると考えられる
             \end{itemize}
-      \item 自発核分裂のような多体のトンネル現象を記述できない
+      \item 自発核分裂のような{\color{AlertOrange}多体のトンネル現象}を記述できない
             \begin{itemize}
               \item 平均場が1つしかなく、核分裂していない状態と核分裂している状態の重ね合わせが記述できない
             \end{itemize}
@@ -313,11 +313,12 @@
   \begin{enumerate}
     \item トンネリング解に対応するエネルギー固有値を求める
           \begin{itemize}
-            \item[{\color{AlertOrange}{$\bullet$}}] \color{AlertOrange}{$\trace{(E-\hat{H})^{-1}}=\sum_{n}\ev{(E-E_n)^{-1}}{E_n}$の極がエネルギー固有値}
+            %\item [{\color{AlertOrange}{$\bullet$}}]
+            \item $\trace{(E-\hat{H})^{-1}}=\sum_{n}\ev{(E-E_n)^{-1}}{E_n}$の{\color{AlertOrange}極がエネルギー固有値}
           \end{itemize}
           \begin{align*}
             \trace\frac{1}{E-\hat{H}+i\eta} & =-i\int_0^{\infty}dT\,e^{iET}\int dq\,\bra{q}e^{-i\hat{H}T}\ket{q} \\
-                                            & = -i\int_0^{\infty}dT\,e^{iET}\int dq\,\int\mathcal{D}q\,e^{iS[q]}
+                                            & = -i\int_0^{\infty}dT\,e^{iET}\int dq\,\underset{\text{\textbf{経路積分}}}{\underline{\int\mathcal{D}q\,e^{iS[q]}}}
           \end{align*}
           \begin{itemize}
             \item $q(0)=q(T)$の境界条件（周期運動）を満たした経路積分
@@ -338,9 +339,9 @@
     \approx & A\sum_{m=1}^{\infty}e^{im\pi}\qty(e^{iW(T)})^m \propto \frac{e^{iW(T)}}{1+e^{iW(T)}}
   \end{align*}
   \begin{itemize}
-    \item $\delta S[q_0(T)]=0$であり、$q_0(T)$はEuler-Lagrange方程式を満たす
+    \item $\delta S[q_0(T)]=0$であり、$q_0(T)$は{\color{AlertOrange}Euler-Lagrange方程式}を満たす
     \item 基本周期$T$に対して、$W(mT)=mW(T)$を満たしている
-    \item 周期$T$が極を与える条件$1+e^{iW(T)}=0\Leftrightarrow W(T)=(2n+1)\pi$はBohr-Sommerfeldの量子化条件に対応
+    \item 周期$T$が{\color{AlertOrange}極を与える条件}$1+e^{iW(T)}=0\Leftrightarrow W(T)=(2n+1)\pi$はBohr-Sommerfeldの量子化条件に対応
   \end{itemize}
 \end{frame}
 
@@ -348,16 +349,16 @@
 \begin{frame}{1粒子系での例}
   1つの極小値を持つポテンシャル$V(q)$内を全エネルギー$E$の元で運動する1粒子について考える
   \begin{columns}[t]
-    \begin{column}{.5\textwidth}
+    \begin{column}{.47\textwidth}
       \begin{itemize}
         \item $m\dv[2]{q_0}{t} = -\grad V(q_0)$
-        \item $E-V(q)\geq0$の領域で周期$T(E)$の運動
+        \item $E-V(q)\geq0$の\textbf{古典的許容領域}で周期$T(E)$の運動
         \item $W(T)=(2n+1)\pi$を満たす周期$T$の運動がエネルギー固有値を与える
         \item $T(E)=2\int_{q_1}^{q_2}dq\,\sqrt{\frac{m}{2(E-V(q))}}$\\から$E=E_{n}^{~0}$が求まる
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
-      \adjincludegraphics[width=1\linewidth,valign=t]{pot1.png}
+      \adjincludegraphics[width=1\linewidth,valign=t]{pot1_tuika.png}
     \end{column}
   \end{columns}
 \end{frame}
@@ -367,7 +368,7 @@
     \begin{column}{.54\textwidth}
       \begin{itemize}
         \item 先ほどは$V(q)$の極小値まわりの周期運動のみを考えていた
-        \item 量子力学的には、トンネル効果によってポテンシャル障壁を透過する
+        \item 量子力学的には、トンネル効果によってポテンシャル障壁\\（{\color{AlertOrange}\textbf{古典的禁止領域}}）を透過する
         \item トンネル効果を記述するために虚時間法を用いる
       \end{itemize}
     \end{column}
@@ -379,12 +380,12 @@
 
 \begin{frame}{1粒子系での例}
   時間$t$を純虚数にする$it\to\tau\in \mathbb{R}$という変換（Wick rotation, $i$は\\虚数単位）を導入すると
-  トンネル効果が考慮できる（虚時間法）
+  トンネル効果が考慮できる（\textbf{虚時間法}）
   \begin{columns}[t]
-    \begin{column}{.5\textwidth}
+    \begin{column}{.49\textwidth}
       \begin{itemize}
         \item $m\dv[2]{q_0}{\tau} = -\grad \qty[-V(q_0)]$
-        \item 反転したポテンシャル内で$q_2\leq q\leq q_3$を運動しているように見える
+        \item 反転したポテンシャル内で\\{\color{AlertOrange}\textbf{古典的禁止領域}}$q_2\leq q\leq q_3$を運動しているように見える
         \item 虚時間で$\delta S[q_0]=0$が成立しており、鞍点法では考慮する必要がある
       \end{itemize}
     \end{column}
@@ -401,12 +402,12 @@
     \trace\frac{1}{E-\hat{H}+i\eta} \propto \frac{-3e^{iW_1}-e^{-W_2}}{1+e^{iW_1}+e^{-W_2}}
   \end{equation*}
   \begin{itemize}
-    \item $1+e^{iW_1(E)}=-e^{-W_2(E)}$が極となる（先ほどは$1+e^{iW_1(E_n^{~0})}=0$）
+    \item {\color{AlertOrange}$1+e^{iW_1(E)}=-e^{-W_2(E)}$}が極となる（先ほどは$1+e^{iW_1(E_n^{~0})}=0$）
     \item $E=E_{n}^{~0}+\varDelta E_n$として、補正項$\varDelta E_n$を求めると
           \begin{equation*}
             E = E_{n}^{~0} -\frac{i\Gamma_n}{2}\,,\quad \Gamma_n = 2\frac{\omega(E_n^{~0})}{2\pi}e^{-W_2(E_n^{~0})}
           \end{equation*}
-    \item $\Gamma_n$は寿命の逆数であり、準安定状態がトンネル効果で崩壊するWKB近似の式として知られている
+    \item $\Gamma_n$は\textbf{寿命の逆数}であり、準安定状態がトンネル効果で崩壊するWKB近似の式として知られている
   \end{itemize}
 \end{frame}
 
@@ -431,7 +432,7 @@
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
-        \item 古典的な基底状態は準安定状態
+        \item 古典的な基底状態は\textbf{準安定状態}
         \item 虚時間に経路積分を適用するとトンネル効果が記述できる
         \item $q_3$にトンネリングした後は$q$が増大する方向へ実時間発展
       \end{itemize}
@@ -440,10 +441,17 @@
       \adjincludegraphics[width=1\linewidth,valign=t]{junantei.png}
     \end{column}
   \end{columns}
-  時刻$t$の状態$\ket{\psi(t)}$が準安定状態$\ket{q}$で観測される確率$P(t)$は、$E=E_n^{~0}-i\Gamma_n/2$より
-  \begin{equation*}
-    P(t) = \abs{\braket{q}{\psi(t)}}^2 = \abs{\bra{q}e^{-iEt/\hbar}\ket{q}}^2 = e^{-\Gamma_nt/\hbar}
-  \end{equation*}
+  {
+    \vspace{0.5\baselineskip}
+    \setlength{\leftmargini}{1.75em}
+    \begin{itemize}
+      \item 時刻$t$の状態$\ket{\psi(t)}$が準安定状態$\ket{q}$で観測される確率$P(t)$は、$E=E_n^{~0}-i\Gamma_n/2$より
+      \begin{equation*}
+        P(t) = \abs{\braket{q}{\psi(t)}}^2 = \abs{\bra{q}e^{-iEt/\hbar}\ket{q}}^2 = e^{-\Gamma_nt/\hbar}
+      \end{equation*}
+    \end{itemize}
+  }
+
 \end{frame}
 
 
@@ -451,7 +459,7 @@
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
       \begin{itemize}
-        \item 原子核の四重極モーメント$Q$は変形度を表す
+        \item 原子核の\textbf{四重極モーメント}$Q$は変形度を表す
         \item $Q$に対するHFエネルギーは$Q_1$で極小値（$\neq$最小値）
         \item \serifRoman{2}のポテンシャル障壁をトンネリングして\serifRoman{3}の領域へ時間発展
         \item EL方程式はHF方程式になっている
@@ -475,7 +483,7 @@
 \end{frame}
 \begin{frame}{まとめと今後の展望}
   \begin{itemize}
-    \item 平均場理論＋経路積分でトンネル効果を記述できる
+    \item {\color{AlertOrange}\textbf{平均場理論＋経路積分でトンネル効果を記述できる}}
     \item 1粒子系での例では、WKB近似の結果を再現できた
     \item 重い核（\ce{^{238}U}など）に適用するためには計算コストや精度の問題があり、工夫が必要
           \begin{itemize}
