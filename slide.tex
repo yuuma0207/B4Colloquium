@@ -238,7 +238,7 @@
     \begin{column}{.5\textwidth}
       \begin{itemize}
         \item $V(r,t)$と核子の波動関数は\\自己無撞着性を持つ
-        \item 核分裂のような現象が自己無撞着な集団運動として記述できる
+        \item 原子核の振動・回転・変形等の励起を、核子の自己無撞着な集団運動として記述できる
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -249,15 +249,15 @@
 \begin{frame}{Hartree-Fock近似}
   \begin{itemize}
     \item Hartree-Fock（HF）近似は原子核の性質（束縛エネルギーや変形度）を上手く説明できる
-    \item 時間依存のHF方程式（TDHF方程式）は核子自由度から微視的に原子核ダイナミクスを記述できる
+    \item 時間依存HF方程式（TDHF方程式）は核子自由度から微視的に原子核ダイナミクスを記述できる
   \end{itemize}
   \begin{block}{TDHFの問題点}
     \begin{itemize}
       \item 多体波動関数が1つのSlater行列式で表されるという近似を用いている
             \begin{itemize}
-              \item 複数のSlater行列式の線形結合で波動関数を表すことで、より正確な状態が得られることが知られている
+              \item 複数のSlater行列式の線形結合で波動関数を表すことで、より正確な状態が得られると考えられる
             \end{itemize}
-      \item 核分裂反応のような多体のトンネル現象を記述できない
+      \item 自発核分裂のような多体のトンネル現象を記述できない
             \begin{itemize}
               \item 平均場が1つしかなく、核分裂していない状態と核分裂している状態の重ね合わせが記述できない
             \end{itemize}
@@ -267,7 +267,7 @@
 
 
 
-\begin{frame}{平均場理論（TDHF）で核分裂反応を記述する}
+\begin{frame}{経路積分＋虚時間法で核分裂反応を記述する}
   \begin{block}{経路積分を使う理由}
     \begin{itemize}
       \item 虚時間法により、多体のトンネル現象を記述できる
@@ -326,7 +326,7 @@
   \end{enumerate}
   \begin{enumerate}
     \setcounter{enumi}{1}
-    \item エネルギー固有値に対応する状態（核分裂後を記述する状態）をEuler-Lagrange方程式で計算する
+    \item エネルギー固有値に対応する状態（バリアを透過して核分裂を起こす状態）をEuler-Lagrange方程式で計算する
   \end{enumerate}
 \end{frame}
 
@@ -364,11 +364,11 @@
 
 \begin{frame}{1粒子系での例}
   \begin{columns}[t]
-    \begin{column}{.5\textwidth}
+    \begin{column}{.54\textwidth}
       \begin{itemize}
         \item 先ほどは$V(q)$の極小値まわりの周期運動のみを考えていた
-        \item 量子力学の結果では、トンネル効果によってポテンシャル障壁を乗り越える
-        \item トンネル効果を記述するためには虚時間法を用いる
+        \item 量子力学的には、トンネル効果によってポテンシャル障壁を透過する
+        \item トンネル効果を記述するために虚時間法を用いる
       \end{itemize}
     \end{column}
     \begin{column}{.5\textwidth}
@@ -378,7 +378,7 @@
 \end{frame}
 
 \begin{frame}{1粒子系での例}
-  $t$を純虚数として、$it\to\tau$という変換（Wick's rotation）を考えると\\
+  時間$t$を純虚数にする$it\to\tau\in \mathbb{R}$という変換（Wick rotation, $i$は\\虚数単位）を導入すると
   トンネル効果が考慮できる（虚時間法）
   \begin{columns}[t]
     \begin{column}{.5\textwidth}
