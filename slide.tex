@@ -188,7 +188,7 @@
   \node[rotate=90,xscale=.7,yscale=#1] at ($(A.south) + (#2\@tempdimc,\@tempdimb)$) {\@roman@I};
 }
 \makeatother
-
+%\usepackage{xcolor}
 
 %タイトル
 \title{J.W.Negele, Nuclear Mean-Field Theory, Physics Today 38, 24(1985)}
@@ -313,7 +313,7 @@
   \begin{enumerate}
     \item トンネリング解に対応するエネルギー固有値を求める
           \begin{itemize}
-            \item $\trace{(E-\hat{H})^{-1}}=\sum_{n}\ev{(E-E_n)^{-1}}{E_n}$の極がエネルギー固有値
+            \item[{\color{AlertOrange}{$\bullet$}}] \color{AlertOrange}{$\trace{(E-\hat{H})^{-1}}=\sum_{n}\ev{(E-E_n)^{-1}}{E_n}$の極がエネルギー固有値}
           \end{itemize}
           \begin{align*}
             \trace\frac{1}{E-\hat{H}+i\eta} & =-i\int_0^{\infty}dT\,e^{iET}\int dq\,\bra{q}e^{-i\hat{H}T}\ket{q} \\
